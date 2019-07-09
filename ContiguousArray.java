@@ -27,13 +27,13 @@ class ContiguousArray {
                 maxLength = i+1;
             }
 
-            if(hmap.containsKey(sum + nums.length)){
-                if(maxLength < i - hmap.get(sum + nums.length)){
-                    maxLength = i - hmap.get(sum + nums.length);
+            if(hmap.containsKey(sum)){
+                if(maxLength < i - hmap.get(sum)){
+                    maxLength = i - hmap.get(sum);
                 }
             }
             else{
-                hmap.put(sum+nums.length, i);
+                hmap.put(sum, i);
             }                        
         }
         return maxLength;
