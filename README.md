@@ -1,6 +1,6 @@
 # Day6
 
-## Problem1
+## Problem1 (https://leetcode.com/submissions/detail/210794807/)
 Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.
 
 Example 1:
@@ -14,7 +14,7 @@ Note:
 The length of the array is in range [1, 20,000].
 The range of numbers in the array is [-1000, 1000] and the range of the integer k is [-1e7, 1e7].
 
-## Problem2
+## Problem2 (https://leetcode.com/problems/contiguous-array/)
 Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
 
 Example 1:
@@ -29,7 +29,7 @@ Output: 2
 Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.
 Note: The length of the given binary array will not exceed 50,000.
 
-## Problem3
+## Problem3 (https://leetcode.com/problems/longest-palindrome)
 Given a string which consists of lowercase or uppercase letters, find the length of the longest palindromes that can be built with those letters.
 
 This is case sensitive, for example "Aa" is not considered a palindrome here.
