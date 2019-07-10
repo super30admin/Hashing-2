@@ -7,7 +7,7 @@
 // Your code here along with comments explaining your approach
 
 /* 
-1. Create a hash map with key as 0
+1. Create a hash map initialize key as 1 and associated value as 1
 2. Iterate through the array and update the sum on every iteration
 3. When the sum is equal to required k, sum - k = 0. Verify this by checking it with the key which is 0
 4. When this is true, update the counter. 
