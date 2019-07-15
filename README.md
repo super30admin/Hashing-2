@@ -1,4 +1,4 @@
-# Day6
+# Hashing-2
 
 ## Problem1 (https://leetcode.com/submissions/detail/210794807/)
 Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.
