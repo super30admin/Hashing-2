@@ -1,3 +1,6 @@
+// time complexity= O(string length)
+//space complexity= constant
+//solution ran on leet code
 class Solution {
     public int longestPalindrome(String s) 
     {

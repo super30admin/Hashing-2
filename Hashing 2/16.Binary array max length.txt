@@ -1,18 +1,11 @@
 class Solution {
     public int findMaxLength(int[] nums) {
-        int sum=0,fin_sum=0,zero_sum=0,one_sum=0;
+        int sum=0,zero=0,max=0;
         HashMap<Integer,Integer> h1=new HashMap<>();
-        HashMap<Integer,Integer> h2=new HashMap<>();
         for(int i=0;i<nums.length;i++)
         {
-            if(nums[i]==0)
-            {
-                sum--;zero_sum++;
-            }
-            else 
-            {
-                   sum++;one_sum++;
-            }
+            if(nums[i]==0) zero--;
+
             if(h1.containsKey(sum))
             {
                 h2.put(sum,i);   
