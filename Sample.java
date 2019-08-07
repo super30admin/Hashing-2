@@ -1,45 +1,37 @@
-// Time Complexity :o(n^3)
-// Space Complexity : Couldn't identify
-// Did this code successfully run on Leetcode : didn't run it in leetcode
-// Any problem you faced while coding this : Determining the logic to implement it in an optimized way. Provided only the brute force solution
+// Time Complexity :O(N)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Throwing Null Pointer Exception at line number 15
+// Any problem you faced while coding this : Finding out the algorithm to approach this problem
 
 
 // Your code here along with comments explaining your approach
-#include <iostream>
-
-using namespace std;
-
-int subsum(int arr[],int l,int k)
-{
-    int count=0;
-    //iterating through the array
-    for(int i=0;i<l;i++)
-    {
-        //iterating through subarrays inside an array
-        for(int j=i+1;j<=l;j++)
-        {
-            //computing the sum of subarray and checking if it matches k
-            int sum=0;
-            for(int p=i;p<j;p++)
-            {
-                sum+= arr[i];
+class Solution {
+    //Loading each letter in the string to hashmap with the number of occurence of the letter as value
+    public int longestPalindrome(String str) {
+            Map<Character, Integer> map = new HashMap<>();
+            for(int i=0; i<str.length(); i++){
+                char ch = str.charAt(i);
+                if(map.containsKey(ch))
+                    map.put(ch, map.get(i) + 1);
+                else
+                    map.put(ch, 1);
             }
-            if(sum==k)
-            {
-                count++;
+            //Trying to find if the letters has occured even or odd number of times based on which they are added to the length variable
+            boolean oddelements = false;
+            int len = 0;
+            for(int count : map.values()){
+                if(count % 2 == 0)
+                    len += count;
+                else{
+                    oddelements = true;
+                    len += count - 1;
+                }
             }
-            
+            // If even the length is printed out as it is else the length is incremented by one (because we need a center letter in case of a string whose length is odd)
+            if(!oddelements)
+                return len;
+            else
+                return len + 1; 
+        
         }
-    }
-    return count;
-}
-
-int main()
-{
-    int arr[]={1,1,1,1,1};
-    int k=2;
-    int l = sizeof(arr)/sizeof(*arr);
-    cout<<subsum(arr,l,k);
-
-    return 0;
 }
