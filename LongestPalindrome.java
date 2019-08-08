@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.HashSet;
 /**
  * Time: O(n)
  * Space: O(n)
@@ -35,9 +36,28 @@ public class LongestPalindrome {
         }
         return isOddFound?max+1:max;
     }
+	
+	//Using HashSet
+	public static int longestPalindromeUsingHashSet(String s) {
+		HashSet<Character> hs = new HashSet<>();
+		int count = 0;
+		for(int i=0; i<s.length(); i++) {
+			//Add keys if not already present
+			if(!hs.contains(s.charAt(i))) {
+				hs.add(s.charAt(i));
+			} else {
+				//If key present, remove key and increase count by 2
+				hs.remove(s.charAt(i));
+				count=count+2;
+			}
+		}
+		return hs.isEmpty() ? count : count+1;
+	} 
+	
 	public static void main(String[] args) {
 		String str = "ababababa";
 		System.out.println(longestPalindrome(str));
+		System.out.println(longestPalindromeUsingHashSet(str));
 	}
 
 }
