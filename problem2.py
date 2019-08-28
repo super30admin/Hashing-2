@@ -2,9 +2,7 @@
 # Space Complexity : Constant(In order of Allowed Chharacter)
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this :
-#    - Was able to code brute force solution but It was not accepted by Leetcode because of time constraint.
-#    - From the leetcode hints and this topic I knew taht I have to use hashtable to store some value.
-#      But I wasn't able to figure out what to store in hashtable to optimize the code. I have to look throught discussion to get the idea. 
+    
 
 def longestPalindrome(self, s: str) -> int:
     data = dict()
