@@ -1,31 +1,47 @@
 # Time Complexity : O(n)
-# Space Complexity : Constant(In order of Allowed Chharacter)
+# Space Complexity : O(n^2)
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this :
-    
+    # Was able to find bruteforce approach only. I have to look throught suggestion to pass all test cases on leetcode. I have included both solutions.
+class Solution:
+    #Brute force solution
+    # def findMaxLength(self, nums: List[int]) -> int:
+#         maxlength = 0
+#         one = {0:0}
+#         zero = {0:0}
+#         for i in range(1,len(nums)+1):
+#             if nums[i-1] == 0:
+#                 zero[i] = zero[i - 1] + 1
+#                 one[i] = one[i-1]
+#             else:
+#                 one[i] = one[i - 1] + 1
+#                 zero[i] = zero[i-1]    
+#         for i in range(len(nums)):
+#             for j in range(i+1, len(nums)):
+#                 totalzero = zero[j+1] - zero[i]
+#                 totalone = one[j+1] - one[i]
+#                 if totalzero == totalone:
+#                     maxlength = max(maxlength, 2 * totalzero)
+#         return maxlength
 
-def longestPalindrome(self, s: str) -> int:
-    data = dict()
-    ans = 0
-    # flag for keeping track of odd frequency
-    flag = False
-    
-    # Calculating frequeny of character
-    for char in s:
-        data[char] = data.get(char, 0) + 1
-        
-    #iterating over frequency dictionary
-    for key, value in data.items():
-        #if frequency of character is even we can directly add it to create palindrome.
-        if value % 2 == 0:
-            ans += value
-        #if frequency of character is odd we have to remove one charcter to craete palindrome and also keep check that we found odd frequency.
-        else:
-            ans += value - 1
-            flag = True
-    # If we found odd frequency than we can add 1 to the length of palindrome to increase the size by 1 otherwise return original answer
-    if flag:
-        return ans + 1
-    else:
-        return ans
-            
+    def findMaxLength(self, nums: List[int]) -> int:
+        sum = 0
+        # initilizing dictionary to store the sum
+        data = dict()
+        maxl = 0 
+        # initilizing dictionary with key zero and value -1. Sum can be zero only when we have equal number of zero and one here, and number of 1 and 0 was equal even before first element of array. So we give it value -1.
+        data[0] = - 1
+        for i in range(len(nums)):
+            # for zero and one increase and decrease sum
+            if nums[i]:
+                sum -= 1
+            else:
+                sum += 1
+                
+            #  if sum exists in dictionary than we compare it with our current max and current index minus last index at which sum was same.
+            if sum in data:
+                maxl = max(maxl, i - data[sum])
+            else:
+            # for new value of sum store it in dictionary with index as value to keep track of sums index.
+                data[sum] = i
+        return maxl
