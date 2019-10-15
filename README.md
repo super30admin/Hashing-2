@@ -1,6 +1,6 @@
 # Hashing-2
 
-## Problem1 (https://leetcode.com/submissions/detail/210794807/)
+## Problem1 (https://leetcode.com/problems/subarray-sum-equals-k/)
 Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.
 
 Example 1:
