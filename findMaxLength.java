@@ -24,7 +24,7 @@ class Solution {
         return Collections.max(ar);
     }
 }
-//SC:O(1)
+//SC:O(n) extra size for storing count in arrayList ar
 //TC:O(n^2)
 // bruteforce approach simple traversing of array
 //time limit exceeded
