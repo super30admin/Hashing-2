@@ -16,4 +16,5 @@ class Solution {
 
 //SC:O(1)
 //TC:O(n^2)
-// bruteforce approach simple traversing
+// bruteforce approach simple traversing of array
+//accepted on leetcode
