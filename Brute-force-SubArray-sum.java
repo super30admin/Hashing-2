@@ -1,4 +1,5 @@
 //Brute force solution
+//Time Complexity: O(n^2)
 
 class Solution {
     public int subarraySum(int[] nums, int k) {
