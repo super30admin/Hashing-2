@@ -24,3 +24,7 @@ class Solution {
         return Collections.max(ar);
     }
 }
+//SC:O(1)
+//TC:O(n^2)
+// bruteforce approach simple traversing of array
+//time limit exceeded
