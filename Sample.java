@@ -1,37 +1,35 @@
-// Time Complexity :O(N)
+// Time Complexity :O(N^3)
 // Space Complexity : O(1)
-// Did this code successfully run on Leetcode : Throwing Null Pointer Exception at line number 15
-// Any problem you faced while coding this : Finding out the algorithm to approach this problem
+// Did this code successfully run on Leetcode : Providing the wrong output(maybe becuase for the letters in the end of string it is running only till the length of the string)
 
 
 // Your code here along with comments explaining your approach
 class Solution {
-    //Loading each letter in the string to hashmap with the number of occurence of the letter as value
-    public int longestPalindrome(String str) {
-            Map<Character, Integer> map = new HashMap<>();
-            for(int i=0; i<str.length(); i++){
-                char ch = str.charAt(i);
-                if(map.containsKey(ch))
-                    map.put(ch, map.get(i) + 1);
-                else
-                    map.put(ch, 1);
-            }
-            //Trying to find if the letters has occured even or odd number of times based on which they are added to the length variable
-            boolean oddelements = false;
-            int len = 0;
-            for(int count : map.values()){
-                if(count % 2 == 0)
-                    len += count;
-                else{
-                    oddelements = true;
-                    len += count - 1;
+    public int longestPalindrome(String s) {
+        int max=0;
+        String pal;
+        //Iterating through the entire string to find all the possible substrings that could be a plaindrome
+        for(int i=0;i<s.length();i++){
+            for(int j=i;j<=s.length();j++){
+                String temp = s.substring(i,j);
+                if(isPalindrome(temp) && temp.length() > max){
+                    max=temp.length();
+                    pal=temp;
                 }
             }
-            // If even the length is printed out as it is else the length is incremented by one (because we need a center letter in case of a string whose length is odd)
-            if(!oddelements)
-                return len;
-            else
-                return len + 1; 
-        
         }
+        return max;
+    }
+    
+    //Palindrome function to check if the given string is a palindrome
+    boolean isPalindrome(String s) {
+        int n = s.length();
+        for (int i = 0; i < (n/2); ++i) {
+            if (s.charAt(i) != s.charAt(n - i - 1)) {
+            return false;
+     }
+  }
+
+  return true;
+}
 }
