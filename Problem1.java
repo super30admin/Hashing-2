@@ -1,7 +1,7 @@
 /**
 Leet code Submission : YES
 Time Complexity : O(N)
-Space Complexity : O(1)
+Space Complexity : O(N)
 
 The main idea is that palindrome will have an even number of same characters on both sides of the String if its even and if its odd sam even number and the one different character will also be there
 **/
