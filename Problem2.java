@@ -1,7 +1,7 @@
 /**
 Leetcode Submitted : YES
 Time Complexity : O(N)
-Space Complexity : O(1)
+Space Complexity : O(N)
 The approach is to keep running sum in Hashmap by calculating complement with target sum at each iteration.
 Once, the runsum is found increase its count
 **/
