@@ -7,7 +7,7 @@
 
 class Solution {
     public int subarraySum(int[] nums, int k) {
-        if(nums == null || nums.length==0)  return 0;  // Edge Case
+        if(nums == null || nums.length == 0)  return 0;  // Edge Case
         //Logic
         int complement = 0;          // Take complement to 
         int count = 0;
