@@ -1,5 +1,5 @@
 //Time Complexity - O(n)
-//Space Complexity - O(n)
+//Space Complexity - O(1)
 // This solution worked on LeetCode
 
 class Solution {
