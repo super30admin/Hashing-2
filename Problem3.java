@@ -1,9 +1,9 @@
 // Time Complexity :
-//      n - size of the bigger string
-//      wordPattern() - O(n)
+//      n - size of string
+//      longestPalindrome() - O(n)
 //      
 // Space Complexity :
-//      wordPattern() - O(1)
+//      longestPalindrome() - O(1)
 //
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
