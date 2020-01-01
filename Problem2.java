@@ -6,24 +6,25 @@
 
 class Solution {
     public int findMaxLength(int[] nums) {
-        int length =0;
-        int count =0;
+        if(nums == null || nums.length <=1) return 0;
+        int max =0;
+        int runSum =0;
         Map<Integer, Integer> map = new HashMap<>();
         map.put(0,-1);
         for(int i=0;i<nums.length;i++){
             if(nums[i] == 0){
-                count--;
+                runSum--;
             }
             else{
-                count++;
+                runSum++;
             }
-            if(map.containsKey(count)){
-                length = Math.max(length,i-map.get(count));
+            if(map.containsKey(runSum)){
+                max = Math.max(max,i-map.get(runSum));
             }
             else{
-                map.put(count,i);
+                map.put(runSum,i);
             }
         }
-        return length;
+        return max;
     }
 }
