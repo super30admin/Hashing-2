@@ -1,5 +1,5 @@
 // Time Complexity :
-//      n - size of the bigger string
+//      n - size of the string
 //      wordPattern() - O(n)
 //      
 // Space Complexity :
