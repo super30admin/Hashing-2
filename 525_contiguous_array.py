@@ -10,10 +10,24 @@ class Solution(object):
             // Your code here along with comments explaining your approach:
                 We start with an initial
         """
+        """
+        !!! IMPORTANT !!! 
+        When ever the running sum is zero it means we have come to the same
+        point as we started. All zero's and one's have cancelled each other.
+        So the max_length will equal till the current nums' index.
+        
+        if running_sum is > 0 = more 1's
+        if running_sum is < 0 = more 0's
+        if running_sum is == 0 equal number of 1's and 0's
+        """
         # initial running total
         running_sum = 0
         # initial running sum is 0
         # we are index 0 with 0 sum
+        # As we are starting from y == 0 in graph. Imagine the graph
+        # Key = current_running_sum value
+        # Value = index at which we first encountered this running_sum
+        # Starting at index 0 and the current running sum is zero
         count_dict = {0: 0}
         # max_length
         max_length = 0

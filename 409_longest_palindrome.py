@@ -30,15 +30,21 @@ class Solution:
         if count:
             result += 1
         return result
+
         # count_dict = Counter(s)
         # result = 0
         # odd_str = False
         # for i in count_dict.values():
-        #     while i >= 2:
-        #         result += 2
-        #         i -= 2
-        #     if i == 1:
+        #     if i % 2 == 0:
+        #         result += i
+        #     else:
+        #         result += i - 1
         #         odd_str = True
         # if odd_str:
         #     result += 1
         # return result
+
+
+if __name__ == '__main__':
+    h = Solution()
+    print(h.longestPalindrome('abccccdd'))
