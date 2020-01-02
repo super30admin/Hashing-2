@@ -1,3 +1,6 @@
+// Time complexiy is O(n) as we are iterating through the length of the string
+// space complexity is O(1) as we are storing max of 26 character only
+// the below solution is passed on leetcode
 import java.util.HashSet;
 public class longestPalidrome {
 	public int longestPalindrome(String s) {
