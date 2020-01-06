@@ -1,5 +1,5 @@
 //Time: O(n) : iterating through all n elements in the array
-//Space:  O(n) storing n chars in worst case into set
+//Space:  O(1) storing 256 fixed size chars in worst case into set
 class Solution {
     public int longestPalindrome(String s) {
         if(s.length()==0 || s==null) return 0;
