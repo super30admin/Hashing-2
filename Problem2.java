@@ -1,7 +1,7 @@
 /* Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1. */
 
 // Time Complexity : O(n) using hashmap
-// Space Complexity : O(1) in place
+// Space Complexity : O(n) (we are using hashmap)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 
