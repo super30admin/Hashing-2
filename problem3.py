@@ -29,3 +29,4 @@ class Solution:
             return len(s)
         else:
             return len(s) - len(dict1) + 1
+
