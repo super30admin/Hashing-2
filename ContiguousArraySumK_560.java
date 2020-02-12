@@ -1,7 +1,7 @@
 // Time Complexity : O(N) 
-// Space Complexity :
-// Did this code successfully run on Leetcode :
-// Any problem you faced while coding this :
+// Space Complexity : O(N) 
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : wondered why we need to store (0,1) initially in the map. Is my explanation below correct?
 
 // ============================= Approach-1 ==================================
 /*
