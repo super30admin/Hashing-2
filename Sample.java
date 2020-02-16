@@ -6,6 +6,15 @@
 
 // Your code here along with comments explaining your approach
 
+Problem 2: Contiguous SubArray
+
+using hashMap
+
+keep track of rsum and index in hashmap,
+if we find the rsum in the hashmap then take the max lenth subarray by cal Math.max(i-hm.get(rsum), max)
+
+Time Complexity: O(n)
+Space Complexity: O(n) 
 
 
 
