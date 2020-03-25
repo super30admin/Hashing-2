@@ -1,6 +1,6 @@
 // Time complexity: O(n)
 // Space complexity: O(n)
-class Solution {
+class SolutionThree {
     public int longestPalindrome(String s) {
         if(s.length() < 1 || s.length() > 1010){
             return 0;
