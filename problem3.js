@@ -19,3 +19,28 @@
 // Output:7
 
 // Explanation: One longest palindrome that can be built is "dccaccd", whose length is 7.
+
+
+// --------------------------------------------------------------------
+
+// if set has the char
+//       remove it from the set and increase evenCount by 2
+//else 
+//       add char to the set 
+//at the end check if set has elements in to see if you need to add +1 for 
+//a single val in the middle
+var longestPalindrome = function(s) {
+    let charSet = new Set();
+    let evenCount = 0;
+    for(let char of s) {
+        if(charSet.has(char)) {
+            charSet.delete(char);
+            evenCount += 2;
+        }
+        else charSet.add(char);
+    }
+    if(charSet.size > 0) return evenCount + 1;
+    return evenCount;
+};
+
+
