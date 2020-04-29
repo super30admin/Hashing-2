@@ -33,6 +33,22 @@ var findMaxLength = function(nums) {
     return maxlen;
 };
 
-// do brute forc solution too
+
+
+// Brute force solution
+//time O(n^2)
+//space O(1)
+var findMaxLength = function(nums) {
+    let max = 0;
+    for(let i = 0; i < nums.length; i++) {
+        let sum = 0;
+        for(let j = i; j < nums.length; j++) {
+            if(nums[j] === 0) sum += -1;
+            else sum += 1;
+            if(sum === 0) max = Math.max((j-i+1),max);
+        }
+    }
+    return max;
+}
 
 
