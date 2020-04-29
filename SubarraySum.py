@@ -1,5 +1,5 @@
 #Time Complexity : O(N)
-#Space Complexity :O(1)
+#Space Complexity :O(N)
 #Procedure
 class Solution(object):
     def subarraySum(self, nums, k):
