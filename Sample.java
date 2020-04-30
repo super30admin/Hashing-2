@@ -68,4 +68,33 @@ class Solution {
         
     }
 
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Did this code successfully run on Leetcode : Yes
+    // Any problem you faced while coding this : No
+
+
+    // Your code here along with comments explaining your approach
+    /*Longest Palindrome
+    */
+
+    public int longestPalindrome(String s) {
+        int cnt = 0;
+        Set<Character> set = new HashSet<>();
+        for(char c: s.toCharArray()) {
+            if(set.contains(c)) {
+                set.remove(c);
+                cnt++;
+            }
+            else {
+                set.add(c);
+            }
+        }
+        
+        if(!set.isEmpty())
+            return cnt*2+1;
+        
+        return cnt*2;
+    }
+
 }
