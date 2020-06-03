@@ -1,7 +1,7 @@
 //After Class
 
 // Time Complexity : (O)n
-// Space Complexity : (O)1 since character is constant
+// Space Complexity : (O)1 since we have only 26 alphabets
 // Did this code successfully run on Leetcode : yes
 
 
