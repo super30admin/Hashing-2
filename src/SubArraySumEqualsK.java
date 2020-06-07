@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-
 // Time Complexity : O(n)
 // Space Complexity : O(n)
 // Did this code successfully run on Leetcode : Yes
@@ -31,12 +28,16 @@ that difference occurred as running sum and ending at current index will be equa
  *
  */
 
-class Solution {
+import java.util.HashMap;
+import java.util.Map;
+
+class SubArraySumEqualsK {
     public int subarraySum(int[] nums, int k) {
         
         if(nums == null || nums.length ==0 ) return 0;
        
         int count = 0, rSum = 0;
+        //running sum, count
         Map<Integer, Integer> map = new HashMap<>();
         
         // edge case e.g {3,4} k=7
@@ -50,7 +51,7 @@ class Solution {
             //take difference
             int complement = rSum - k;
             
-            //if difference already occurred, increase count by value corresponding to the
+            //if complement already occurred, increase count by value corresponding to the
             //difference from the map -- that value represent how many times running sum seen till now
             if(map.containsKey(complement)) {
                 count+=map.get(complement);
