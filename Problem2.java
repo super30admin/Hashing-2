@@ -1,5 +1,6 @@
 // Time Complexity : O(n)
 // Space Complexity :O(n)
+//      worst case is O(n) all sum is unique
 // Did this code successfully run on Leetcode :yes
 // Any problem you faced while coding this :no
 

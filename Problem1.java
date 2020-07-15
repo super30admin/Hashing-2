@@ -1,5 +1,6 @@
 // Time Complexity : O(n)
 // Space Complexity : O(n)
+//      worst case is O(n) all sum is unique
 // Did this code successfully run on Leetcode :yes
 // Any problem you faced while coding this : cleared up in class
 
@@ -15,7 +16,7 @@ class Problem1 {
         // storing continous sum of subarray and frequency
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        // intial 
+        // initial 
         int sum = 0;
         int count = 0;
 

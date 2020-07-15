@@ -1,5 +1,6 @@
 // Time Complexity :O(n)
-// Space Complexity :O(n)
+// Space Complexity :O(1)
+//      As we are storing character O(26) = O(1)
 // Did this code successfully run on Leetcode :yes
 // Any problem you faced while coding this :no
 
