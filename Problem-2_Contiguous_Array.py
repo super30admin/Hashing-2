@@ -101,6 +101,15 @@ class Solution:
                 
             elif nums[ind] == 1:
                 curr_sum -= 1
+               
+#             DOMINIC'S WAY
+#             if curr_sum == 0:
+#                 max_len = ind + 1
+                
+#             if curr_sum not in hashmap:
+#                 hashmap[curr_sum] = ind
+#             else:
+#                 max_len = max(max_len, ind - hashmap[curr_sum])
                 
             if curr_sum in hashmap:
                 max_len = max(max_len, ind - hashmap[curr_sum])
