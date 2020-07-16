@@ -3,7 +3,7 @@ During each iteration, we also check whether the cumulative count value at the
 If it did occur, we calculate the difference between their indices. That would be length of subarray where equal number of zeros and one's. Max of such scenarios
 yields to the max length of the subarray. 
 
-Time Complexity :O(n)
+Time Complexity :O(n) -- Array size increases , so the hashmap.
 Space complexity : O(1)
 
 
