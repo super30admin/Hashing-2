@@ -28,13 +28,12 @@ class Solution:
  Approach2 :
  The Counter() function in collections module will be used which returns a dictionary with iterable as character and value as count.rble or the mapping.
  
- class Solution:
+class Solution:
     def longestPalindrome(self, s: str) -> int:
         dic = collections.Counter(s)
-        Max_length=0
+        res=0
         for key,val in dic.items():
-            Max_length+=(2 if val % 2 ==0 else 2)
-        if Max_length!=len(s):
-            Max_length+=1
-        else:
-            return Max_length
+            res+= (val//2)*2
+            if res %2==0 and val%2==1:
+                res+=1
+        return res
