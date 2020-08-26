@@ -35,12 +35,14 @@ findMaxLength = function(nums) {
     if (!hashmap.has(sum)) {
       return hashmap.set(sum, index);
     } else {
-      return Math.max(max, index - hashmap.get(sum));
+      return max = Math.max(max, index - hashmap.get(sum));
     }
   });
   return max;
 };
 
 findMaxLength([0, 1]);
+
+findMaxLength([0, 0, 1, 0, 0, 0, 1, 1]);
 
 //# sourceMappingURL=problem2.js.map

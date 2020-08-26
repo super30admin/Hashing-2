@@ -34,8 +34,9 @@ findMaxLength = (nums) ->
     if !hashmap.has(sum)
       hashmap.set(sum, index)
     else
-      Math.max(max, index-hashmap.get(sum))
+      max = Math.max(max, index-hashmap.get(sum))
 
   max
 
 findMaxLength([0, 1])
+findMaxLength([0,0,1,0,0,0,1,1])
