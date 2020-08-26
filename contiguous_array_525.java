@@ -1,4 +1,20 @@
-
+    /*  Explanation
+    # Leetcode problem link : https://leetcode.com/problems/contiguous-array/
+    Time Complexity for operators : o(n)
+    Extra Space Complexity for operators : o(n) .. 
+    Did this code successfully run on Leetcode : Yes
+    Any problem you faced while coding this : No
+# Your code here along with comments explaining your approach
+        # Basic approach : Two for loop. traverse to the each element and inner array will increment count for both '0' and '1'
+                            if they are equal then we found the subarray, the store the max length by comparing with max;
+        # Optimized approach: The main idea behnid this is increase when there is '0' and decrement when there is '1'. 
+                              
+            # 1. If we found similar sum in the hashmap that means we found the subarray. 
+            # 2. Also make sure that is '0' is found then change the max to (i+1) directly.
+            # 3. if sum is not dound then store it in hashmap with its index
+            # 4. At the end, return max. That's the required o/p
+    */
+    
 import java.util.*;
 public class contiguous_array_525 {
     public static void main(String args[]) {
