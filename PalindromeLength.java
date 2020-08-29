@@ -1,5 +1,5 @@
 // Time Complexity : O(N)
-// Space Complexity :O(N)
+// Space Complexity :O(52) or O(1) The string can have atmost 52 characters.
 // Did this code successfully run on Leetcode :YEs
 // Any problem you faced while coding this :
 
