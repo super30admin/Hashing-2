@@ -1,17 +1,34 @@
+"""
+Problem: Longest Palindrome
+Leetcode: https://leetcode.com/problems/longest-palindrome/
+Time Complexity: O(N), where N is the length of s. We need to count each letter.
+Space Complexity: O(N), the space for our count and hashset
+"""
+
 
 class Solution:
-    def longestPalindrome(self, s: str) -> int:
-        p = 0
-        u = set()
+    def longestPalindrome(self, s: str):
+        # Base case
+        if s is None or len(s) == 0:
+            return 0
 
-        for char in s:
-            if char in u:
-                p += 1
-                u.remove(char)
+        count = 0
+        # Define a hashset
+        hashset = set()
+
+        for i in range(len(s)):
+            char = s[i]
+            if char in hashset:
+                hashset.remove(char)
+                count += 2
             else:
-                u.add(char)
+                hashset.add(char)
 
-        if u:
-            return p * 2 + 1
-        else:
-            return p * 2
+        if hashset:
+            count += 1
+        return count
+
+
+# Driver code
+obj = Solution()
+print(obj.longestPalindrome("abccccdd"))
