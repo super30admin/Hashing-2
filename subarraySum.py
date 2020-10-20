@@ -17,7 +17,7 @@ class Solution:
 
         return ans
 
-        #brute force
+        #brute force - TC - O(n^2), SC - O(1)
 #         ans = 0
 #         for i in range(len(nums)):
 #             running_sum = 0
