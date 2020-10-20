@@ -1,5 +1,5 @@
 # Time Complexity: O(n)
-# Space Complexity: O(n)
+# Space Complexity: O(26) -> O(1)
 # Did it run on Leetcode: Yes
 # Did you face any issues: No
 # Approach:
