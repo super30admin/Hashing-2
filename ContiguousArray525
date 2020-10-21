@@ -1,0 +1,35 @@
+class Solution {
+    public int findMaxLength(int[] nums) {
+        
+        //525. Contiguous Array
+        //Time and Space complexity is O(n)
+        HashMap<Integer,Integer> counts = new HashMap<>();
+        int count =0;
+        int maxLength = 0;
+        counts.put(0,-1); //The key is the sum and the value is it's index at which                                     the sum first occured
+        for(int i =0;i<nums.length;i++)
+        {
+             if(nums[i]==0)
+            {
+                count = count -1;
+            }
+        else{
+             count = count+1;
+        }
+           
+            
+            
+                if(counts.containsKey(count)){
+           maxLength = Math.max(maxLength, i- counts.get(count)) ;
+        }
+            
+            else{
+                 counts.put(count,i);
+            }
+               
+        }
+        return maxLength;
+        }
+           
+    
+}
