@@ -1,7 +1,7 @@
 #Time Complexity : O(n) where n is the length of input array
 #Space Complexity : O(n) where n is the length of input array
 #Did this code successfully run on Leetcode : Yes
-#Any problem you faced while coding this : Yes (the optimized version)
+#Any problem you faced while coding this : No
 
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:

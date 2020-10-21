@@ -1,8 +1,7 @@
 #Time Complexity : O(n) where n is the length of input array
 #Space Complexity : O(n)
 #Did this code successfully run on Leetcode : Yes
-#Any problem you faced while coding this : Yes (the optimized version)
-
+#Any problem you faced while coding this : No
 #optimized
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
