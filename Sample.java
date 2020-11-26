@@ -48,7 +48,7 @@ class Solution {
 //
 // Time Complexity :o(n)
 // Space Complexity :0(n)
-//Contiguous Array
+//Contiguous Array Contigous
 public class Solution {
 
     public int findMaxLength(int[] nums) {
