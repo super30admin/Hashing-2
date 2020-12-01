@@ -1,10 +1,10 @@
-// Time Complexity : O(N)
-// Space Complexity : O(N) ??
+// Time Complexity : O(N) ?
+// Space Complexity : O(N) ?
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : Running Sum technique + Logic of hmap.put(0,1) as base case.
 
 
-// Your code here along with comments explaining your approach :  Idea is to use tabulation method and not memoization as we just need the result from PREVIOUS STEP at each stage.
+// Your code here along with comments explaining your approach :  Idea is to use Hashmap + check if complement (rsum - k) exists in array to determine the count
 SOLUTION:
 
 class Solution {
