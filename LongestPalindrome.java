@@ -3,17 +3,20 @@
 // Did it run successfully on Leetcode? YES
 class Solution {
     public int longestPalindrome(String s) {
-       int[] charCount = new int[128];   
-        int result = 0;
-       for (char c: s.toCharArray())
-       {
-           if (++charCount[c] == 2)
-           {
-               result = result + 2;
-               charCount[c] = 0;
-           }
-       }
-      
-       return result == s.length() ? result : result + 1;
+        HashSet<Character> set = new HashSet<>();
+        int count = 0;
+        for (char c :s.toCharArray())
+        {
+            if (set.contains(c))
+            {
+                count= count + 2;
+                set.remove(c);
+            }
+            else
+            {
+                set.add(c);
+            }
+        }
+        return set.size() == 0? count: count+1;
     }
 }
