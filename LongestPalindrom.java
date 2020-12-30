@@ -2,7 +2,7 @@ class LongestPalindrom {
   // Time Complexity : O(N)
   // Space Complexity : O(1)
   // Did this code successfully run on Leetcode : Yes
-  // Any problem you faced while coding this : had confused in case of odd amount of frequency
+  // Any problem you faced while coding this : had confused in case of odd char of frequency
 
   static int longest(String s){
     if(s == null || s.length() < 2) return s.length();
