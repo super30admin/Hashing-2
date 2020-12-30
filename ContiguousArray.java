@@ -56,22 +56,43 @@ class ContiguousArray {
         
         //save sum,index as key,value pair in hashmap
     
+       // map.put(0,-1);
+        //for(int i= 0; i < nums.length;i++){
+            
+         //   int elt = nums[i];
+           // if(elt == 0){
+             //   currsum = currsum  - 1;
+           // }else if(elt == 1){
+           //     currsum = currsum + 1;
+           // }
+            
+           // if(map.containsKey(currsum)){
+           //     maxLength = Math.max(maxLength, i - map.get(currsum));
+           // }else{
+          //      map.put(currsum,i);
+          //  }
+       // }
+       // return maxLength;
+      /*
+        method 3: running sum method explained in class
+        Time complexity: O(n)
+        space complexity :O(n)
+        */
+        HashMap<Integer,Integer> map = new HashMap<>();
         map.put(0,-1);
-        for(int i= 0; i < nums.length;i++){
+        int rSum =0;
+        int maxLen =0;
+        for(int i = 0; i < nums.length;i++){
+            rSum = nums[i] == 0 ? rSum -1 : rSum +1;
             
-            int elt = nums[i];
-            if(elt == 0){
-                currsum = currsum  - 1;
-            }else if(elt == 1){
-                currsum = currsum + 1;
+            if(!map.containsKey(rSum)){
+                map.put(rSum, i);
             }
-            
-            if(map.containsKey(currsum)){
-                maxLength = Math.max(maxLength, i - map.get(currsum));
-            }else{
-                map.put(currsum,i);
+            else{
+                maxLen = Math.max(maxLen, i - map.get(rSum));
             }
         }
-        return maxLength;
+        
+        return maxLen;
     }
 }

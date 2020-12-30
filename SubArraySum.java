@@ -46,7 +46,7 @@ class SubArraySum {
         /*
     method 2 - using HashMap
     Time complexit: O(n), n is the number of elements in the array
-    space complexity: O(1)
+    space complexity: O(n)
     */
     public int subarraySum(int[] nums, int k) 
     {
