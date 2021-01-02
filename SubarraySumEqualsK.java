@@ -1,3 +1,6 @@
+// TC - O(n) where n is number of elements in array.
+// SC - O(n)
+
 class Solution {
     public int subarraySum(int[] nums, int k) {
        if(nums == null || nums.length == 0) return 0;
