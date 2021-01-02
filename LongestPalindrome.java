@@ -20,7 +20,7 @@ class Solution {
                 set.add(c);
             }
         }
-       // if hashset is not empty, increase it by one and return because we initialized it with 0.
+       // if hashset is not empty, increase it by one and return because of pairs the palindrome formed is of even length. And we can insert any 1 character in the middle of palindrome.
         if(!set.isEmpty()) count++;
         return count;
     }
