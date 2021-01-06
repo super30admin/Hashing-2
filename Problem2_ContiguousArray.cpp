@@ -62,7 +62,7 @@ int main(){
     Solution a;
     vector<int> nums={0,1,0,0,0,1,1,1,0};
     //int target=2;
-    int b = a.findMaxLength(nums);
+    a.findMaxLength(nums);
     // for (int x : b) 
     //     cout << x << " "; 
 }
