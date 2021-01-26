@@ -16,3 +16,28 @@ class Solution {
         return Math.min(map.get(0),map.get(1))*2;
     }
 }
+
+//Solution- teime- O(n), space-O(n)
+class Solution {
+    public int findMaxLength(int[] nums) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        map.put(0,-1);
+        int count=0;
+        int sum=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]==0)
+                sum++;
+            else
+                sum--;
+            
+            if(map.containsKey(sum))
+                count=Math.max(count,(i-map.get(sum)));
+            else
+                map.put(sum,i);
+            
+        }
+        return count;
+        
+    }
+}
