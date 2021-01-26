@@ -17,7 +17,7 @@ class Solution(object):
         """
         letters_set = set()
         for i in range(len(s)):
-            if s[i] in d:
+            if s[i] in letters_set:
                 letters_set.remove(s[i])
             else:
                 letters_set.add(s[i])
@@ -25,3 +25,17 @@ class Solution(object):
             return len(s)
         else:
             return len(s) - len(letters_set) + 1
+        
+        ## Aproach 2
+        # letters_set = set()
+        # size = 0
+        # for i in range(len(s)):
+        #     if s[i] in letters_set:
+        #         letters_set.remove(s[i])
+        #         size += 2
+        #     else:
+        #         letters_set.add(s[i])
+        # if len(letters_set) != 0: # No element or center element remains i.e. pallindrome
+        #     return size + 1 # Does not matter how many elements left in set (no one has a pair), we can only take one as the center element
+        # else:
+        #     return size
