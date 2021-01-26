@@ -1,7 +1,7 @@
-// Time Complexity :
-// Space Complexity :
-// Did this code successfully run on Leetcode :
-// Any problem you faced while coding this :
+// Time Complexity :O(n)
+// Space Complexity : O(n) as only one hashMap is added extra
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : followed the idea discussed in the class
 
 
 // Your code here along with comments explaining your approach
