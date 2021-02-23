@@ -1,17 +1,33 @@
-public class Solution {
-    public int subarraySum(int[] nums, int k) {
-        int count = 0, sum = 0;
-        HashMap < Integer, Integer > map = new HashMap < > ();
-        map.put(0, 1);
-        for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-            if (map.containsKey(sum - k))
-                count += map.get(sum - k);
-            map.put(sum, map.getOrDefault(sum, 0) + 1);
+class Solution {
+    public int longestPalindrome(String s) {
+        
+        HashMap<Character, Integer> charMap = new HashMap<>();
+        for(int i=0;i<s.length();i++) {
+            int count = charMap.containsKey(s.charAt(i)) ? charMap.get(s.charAt(i)) : 0;
+            charMap.put(s.charAt(i), count + 1);
         }
-        return count;
+        boolean oneOdd = true;
+        int result =0;
+        
+        
+        for(int value : charMap.values()){
+            if(value % 2 ==0)
+                result += value;
+            
+             else if( value % 2 == 1 ){
+                 if(oneOdd){
+                     oneOdd=false;
+                result += value;
+                 }
+                 else
+                    result += value -1;
+             }
+            
+        }
+        return result;
+        
     }
 }
 
-// TC : O(N)
-// Space: O(N)
+//TC: O(N)
+// space: O(n)
