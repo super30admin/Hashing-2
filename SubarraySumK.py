@@ -1,3 +1,10 @@
+'''
+TC: O(n)
+SC: O(n) considering the elements present in hashmap
+Leetcode: unsuccessful
+Problem: giving the wrong output but not sure where I might be going wrong.
+'''
+
 
 class Solution:
     def subarraySum(self, nums, k: int) -> int:
