@@ -44,11 +44,7 @@ def subArraySum(nums, k):
         runningSum += num
         if(runningSum - k in sumDict):
             count += sumDict[runningSum-k]
-        if(runningSum in sumDict):
-            sumDict[runningSum]+=1
-        else:
-            sumDict[runningSum]=1
-            
+        sumDict[runningSum] = sumDict.get(runningSum, 0) + 1
     return count
 
 print(subArraySum([1,1,1], 2))
