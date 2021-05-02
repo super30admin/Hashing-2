@@ -1,3 +1,6 @@
+# TC: O(N) where N is the size of the input array
+# SC: O(N) space for the hashmap used to store mapping of the running sum and the number of time that particular running sum has occured before. 
+
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         csum = count = 0
