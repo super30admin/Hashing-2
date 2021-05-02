@@ -1,30 +1,27 @@
 //time complexity: o(n)
 
+
 class Solution {
-    public boolean isIsomorphic(String s, String t) {
-        if(s.length() != t.length()) return false;
-            
-        HashMap<Character,Character> sMap = new HashMap<>();
-        HashMap<Character, Character> tMap = new HashMap<>();
+    public int longestPalindrome(String s) {
+        if(s == null || s.length() == 0) return 0;
+        HashSet<Character> Pal_set = new HashSet<>();
+        int count = 0;
         
-        for(int i=0;i< s.length();i++){
-            char sChar = s.charAt(i);
-            char tChar = t.charAt(i);
-            
-         // s to t isomorphic (mapping)
-            if(!sMap.containsKey(sChar)){
-                sMap.put(sChar, tChar);
-            } else{
-                if(sMap.get(sChar) != tChar) return false;
+        for(int i =0;i < s.length() ; i++){
+            char c = s.charAt(i);
+            if(Pal_set.contains(c)){
+                count += 2;
+                Pal_set.remove(c);
+                
+            }else{
+                Pal_set.add(c);
             }
-        
-        // t to s isomorphic (mapping)
-             if(!tMap.containsKey(tChar)){
-                tMap.put(tChar, sChar);
-            } else{
-                if(tMap.get(tChar) != sChar) return false;
-            }
+        }if(!Pal_set.isEmpty()){
+            count ++;
         }
-        return true;
+        
+        return count;
+        
+        
     }
 }
