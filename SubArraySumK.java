@@ -1,3 +1,10 @@
+// Time Complexity : O(n) 
+// Space Complexity : O(n)
+// Approach : We are using rSum concept, in an array having sum of elements X if a part of it has sum Y then the remaining sum should not be calculated
+// Keep track of occurence from array in hashmap
+// if sum - k exists then add the respective count to original count else add element to hashmap
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
 class SubArraySumK {
     public int subarraySum(int[] nums, int k) {
         int rSum=0, count=0;
