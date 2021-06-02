@@ -2,8 +2,8 @@ from typing import List
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         sub_map={0:1}
-        cumulative_sum=0
-        counter=0
+        cumulative_sum=0  #calculate cumulative sum
+        counter=0         #count number of subarray
         for number in nums:
             cumulative_sum+=number
 
