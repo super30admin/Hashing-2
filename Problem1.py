@@ -1,24 +1,23 @@
-# Time Complexity : O(n**2)
+# Time Complexity : O(n)
 # Space Complexity : O(n)
-# Did this code successfully run on Leetcode : No (time limit exceeded)
-# Any problem you faced while coding this : Time limit exceeded
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
 
+
+#maintaining current sum and saving if current - pres element is k
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        a ={}
-        s = 0
+        if len(nums) == 0:
+            return 0
+        a = {0: 1}
+        currVal = 0
+        count = 0
         for i in range(len(nums)):
-            a[i] = s
-            s += nums[i]
-        print(a)
-        out = 0
-        for i in a:
-            if a[i] == k:
-                out += 1
-        for i in range(1,len(nums)):
-            for j in range(0,i):
-                # print(i,j)
-                if a[i] - a[j] == k:
-                    print(i,j)
-                    out += 1
-        return out
+            currVal += nums[i]
+            if currVal - k in a:
+                count += a[currVal - k]
+            if currVal in a:
+                a[currVal] += 1
+            else:
+                a[currVal] = 1
+        return count

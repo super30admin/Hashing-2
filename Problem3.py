@@ -10,20 +10,15 @@ class Solution:
         if len(s) == 0:
             return 0
         a = {}
+        count = 0
         for i in s:
             if i not in a:
-                a[i] = 1
+                a[i] = True
             else:
-                a[i] += 1
-        palLen = 0
-        cont = False
-        for i in a:
-            if a[i] % 2 == 1:
-                cont = True
-                palLen += (a[i]-1)
-            else:
-                palLen += a[i]
-        if cont == True:
-            return palLen + 1
-        return palLen
+                del a[i]
+                count += 2
+        if len(a) != 0:
+            count += 1
+        return count
+        
         

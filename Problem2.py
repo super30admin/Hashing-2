@@ -1,33 +1,24 @@
-# Time Complexity : O(n**2)
+# Time Complexity : O(n)
 # Space Complexity : O(n)
-# Did this code successfully run on Leetcode : No(time limit exceeded)
-# Any problem you faced while coding this : Yes
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
 
+
+#mapping 0 -> -1 and 1 -> 1 and maintaining current values such that
+# keeping track previous same number
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        if len(nums) == 1:
+        if len(nums) == 0:
             return 0
         a = {}
+        currMax = 0
+        currVal = 0
         for i in range(len(nums)):
-            if i == 0:
-                if nums[i] == 0:
-                    a[0] = [1,0]
-                else:
-                    a[0] = [0,1]
+            currVal = currVal - 1 if nums[i] == 0 else currVal + 1
+            if currVal == 0:
+                currMax = max(currMax,i+1)
+            if currVal in a:
+                currMax = max(currMax,i-a[currVal])
             else:
-                if nums[i] == 0:
-                    a[i] = [a[i-1][0]+1,a[i-1][1]]
-                else:
-                    a[i] = [a[i-1][0],a[i-1][1]+1]
-                    
-        print(a)
-        maxLen = 0
-        for i in a:
-            if a[i][0] == a[i][1]:
-                maxLen = i+1
-        for i in range(1,len(nums)):
-            for j in range(0,i):
-                if a[i][0] - a[j][0] == a[i][1] - a[j][1]:
-                    if maxLen < i-j:
-                        maxLen = i-j
-        return maxLen
+                a[currVal] = i
+        return currMax
