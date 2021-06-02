@@ -78,7 +78,6 @@ class Solution:
                 
         return largest_palindrome
 
-
 obj = Solution()
-# print(obj.longestPalindrome("abccccdd")) 
-# print(obj.longestPalindrome("a")) 
+print(obj.longestPalindrome("abccccdd")) 
+print(obj.longestPalindrome("a")) 
