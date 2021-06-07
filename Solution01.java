@@ -1,23 +1,22 @@
-import java.util.*;
-
 class Solution01 {
-    public int longestPalindrome(String s) {
-        if(s == null || s.length()==0) return 0;
-        Set<Character> set=new HashSet<>();
-        int count=0;
-        for (int i=0;i<s.length();i++){
-            char c=s.charAt(i);
-            if(set.contains(c)){
-                count+=2;
-                set.remove(c);
-            }
-            else{
-                set.add(c);
-            }
+    int count =0;
+    public int subarraySum(int[] nums, int k) {
+        for(int i= 0; i<nums.length; i++){
+            if(nums[i]<=k){
+                if(i>0 && nums[i]==nums[i-1]){
+                    break;
+                }
+                if(nums[i]==k) count++;
+                    for(int j=i+1; j<nums.length;j++){
+                        if(nums[j]<=k){
+                            if(nums[i]+nums[j]==k){
+                                count ++;
+                            }
+                        }
+                        }
+            
+          }
         }
-                    if(!set.isEmpty()){
-                        count+=1;
-                    }
-        return count;
+    return count;
     }
 }
