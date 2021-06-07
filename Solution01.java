@@ -1,21 +1,21 @@
 class Solution01 {
-    int count =0;
     public int subarraySum(int[] nums, int k) {
+    HashMap<Integer,Integer> mmap=new HashMap<>();
+    int rsum=0;
+    int count=0;
+    mmap.put(0,1);
         for(int i= 0; i<nums.length; i++){
-            if(nums[i]<=k){
-                if(i>0 && nums[i]==nums[i-1]){
-                    break;
-                }
-                if(nums[i]==k) count++;
-                    for(int j=i+1; j<nums.length;j++){
-                        if(nums[j]<=k){
-                            if(nums[i]+nums[j]==k){
-                                count ++;
-                            }
-                        }
-                        }
+           rsum+=nums[i];
+            if(mmap.containsKey(rsum-k)){
+                count+=mmap.get(rsum-k);
+            }
+            if(!mmap.containsKey(rsum)){
+                mmap.put(rsum,1);
+            }
+            else{
+                mmap.put(rsum,mmap.get(rsum)+1);
+            }
             
-          }
         }
     return count;
     }
