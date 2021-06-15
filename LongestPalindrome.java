@@ -1,29 +1,27 @@
-class longestPalindrome {
+class LongestPalindrome {
     public int longestPalindrome(String s) {
 
-        HashMap<Character, Integer> map = new HashMap<>();
-        int count = 0;
-        for (Char char : s.toCharArray()) {
+        if (s == null || s.length() == 0) return 0;
 
-            if (!map.containsKey(char)) {
-                map.put(char, 0);
+        //Space complexity is O(1), Time complexity O(n)
+        HashSet<Character> set = new HashSet<>();
+
+        int count = 0;
+        for (int i=0; i<s.length(); i++) {
+            char c = s.charAt(i);
+            if (set.contains(c)) {
+                count += 2;
+                set.remove(c);
+            } else {
+                set.add(c);
             }
-            map.put(char, map.get(char) + 1);
         }
 
-        int one = false;
-        for (Map.Entry element : map.entrySet()) {
-            if (element.get() % 2 == 0) {
-                count+=2;
-            }
-
-            if (element.get() % 2 != 0 && one = false) {
-                one = true;
-                count+=element.get();
-            }
+        if (!set.isEmpty()) {
+            count += 1;
         }
 
         return count;
-        
+
     }
 }

@@ -1,20 +1,29 @@
-class contiguousArray {
+class ContiguousArray {
 
     public int findMaxLength(int[] nums) {
 
-        HashMap<Integer, Integer> map = new HashMap<>();
-        map.put(0, 0);
-        map.put(1, 0);
-        int count = 0;
-        
-        for (int i=0; i<nums.length; i++) {
-            map.get(nums[i]) = map.get(nums[i])++;
+        public int subarraySum(int[] nums, int k) {
 
-            if (map.get(0) % 2 == 0 && map.get(1) % 2 == 0) {
-                count++;
-            }         
+            //O(n) space and time
+            HashMap<Integer, Integer> map = new HashMap<>();
+            int runningSum = 0;
+            int count = 0;
+            map.put(0, 1);
+
+            for (int i=0; i<nums.length; i++) {
+
+                runningSum += nums[i];
+
+                if(map.containsKey(runningSum - k)) {
+                    count += map.get(runningSum - k);
+                }
+                map.put(runningSum, map.getOrDefault(runningSum, 0) + 1);
+
+            }
+
+            return count;
+
         }
 
-        return count;
-
+    }
 }
