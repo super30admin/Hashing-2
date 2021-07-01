@@ -9,6 +9,5 @@ class Solution:
             for j in range(i,len(nums)):
                 curr_sum=curr_sum+nums[j]
                 if curr_sum==k:
-                    res=max(res,j-i+1) # to take max value so far
+                    res=res+1 # to take count so far
         return res
-                
