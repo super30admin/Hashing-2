@@ -5,31 +5,30 @@
 
 
 // Your code here along with comments explaining your approach
-import java.util.Map;
-
-public class Solution {
-
+class Solution {
     public int findMaxLength(int[] nums) {
-
-        Map<Integer, Integer> hashMap = new HashMap<>();
-
-        int maxLength = 0, count=0;
-
-        hashMap.put(0, -1);
+        if(nums == null || nums.length == 0)
+            return 0;
         
+        Map<Integer, Integer> sumMap = new HashMap<>();
+        int runSum = 0, maxLen = 0;
+        
+        //handling edge case
+        sumMap.put(0, -1);
+    
         for(int i=0; i<nums.length; i++){
-
-            count = count + (nums[i] == 1 ? 1 : -1);
-
-            if(hashMap.containsKey(count)){
-                maxLength = Math.max(maxLength, i-hashMap.get(count));
-            } else {
-                hashMap.put(count, i);
-            }
-
-        }
             
-    return maxLength;
+            //calculating running sum
+            runSum = (nums[i] == 0)? runSum-1: runSum+1;
+            //check if the runSum exists or not
+            if(!sumMap.containsKey(runSum)){
+                sumMap.put(runSum, i);
+            } else {
+                //check if maxlen is less the new length
+                maxLen = Math.max(maxLen,  i - sumMap.get(runSum));
+            }
+        }
+        
+        return maxLen;
     }
 }
-
