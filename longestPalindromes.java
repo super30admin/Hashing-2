@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 // Time Complexity :O(N)
 // Space Complexity :O(N)
 // Did this code successfully run on Leetcode : YES
@@ -28,7 +31,7 @@ class longestPalindromes {
             if(s.length()==1)
                 return 1;
         
-        Map<Character,Integer> map = new HashMap();
+        Map<Character,Integer> map = new HashMap<>();
         int count=0;
         
         
