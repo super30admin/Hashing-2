@@ -1,8 +1,7 @@
 # Time Complexity : O(N) 
-# Space Complexity : O(K) for the primes array and the hashmap
+# Space Complexity : O(K) where k is length of the string
 # Did this code successfully run on Leetcode : Partially, 47/95 test cases
 # Any problem you faced while coding this : I didn't get the logic exactly to solve this problem
-
 
 class Solution:
     def longestPalindrome(self, s: str) -> int:
