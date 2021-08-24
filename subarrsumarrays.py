@@ -1,23 +1,23 @@
-# Time Complexity : O(N)
-# Space Complexity : O(1) 
-# Did this code successfully run on Leetcode : No
-# Any problem you faced while coding this : I did not get the logic right
+# Time Complexity : O(N) for single pass for loop
+# Space Complexity : O(N) for dict
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
 
 
 
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        temp = k
-        count = 0
+        rsum = 0
+        res = 0
+        mydict = {}
+        mydict[0] = 1
         for i in range(len(nums)):
-            if nums[i] == k:
-                count += 1
+            rsum += nums[i]
+            if (rsum - k) in mydict:
+                res += mydict[rsum - k]
+            if rsum in mydict:
+                mydict[rsum] += 1
             else:
-                if temp == 0:
-                    count += 1
-                    temp = k
-                    i = i - 1
-                else:
-                    if (temp - nums[i]) >= 0:
-                        temp -= nums[i]
-        return count
+                mydict[rsum] = 1
+        
+        return res
