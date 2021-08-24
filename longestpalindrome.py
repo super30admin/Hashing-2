@@ -1,29 +1,22 @@
-# Time Complexity : O(N) 
-# Space Complexity : O(K) where k is length of the string
-# Did this code successfully run on Leetcode : Partially, 47/95 test cases
-# Any problem you faced while coding this : I didn't get the logic exactly to solve this problem
+# Time Complexity : O(N) as it is single pass
+# Space Complexity : O(N) for N characters in the string put in the set
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : I got stuck at the space complexity
 
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        # if len(s) == 1:
-        #     return len(s[0])
-        mydict = {}
-        flag = 0
-        count  = 0
-        
+        myset = set()
+        count = 0
         for i in range(len(s)):
-            if s[i] not in mydict:
-                mydict[s[i]] = 1
+            if s[i] in myset:
+                count += 2
+                myset.remove(s[i])
             else:
-                mydict[s[i]] += 1
-        vals = list(mydict.values())
-        for i in range(len(vals)):
-            if vals[i] % 2 == 1 and flag == 0:
-                flag = 1
-            elif vals[i] % 2 == 1 and flag == 1:
-                vals[i] = 0
-            
-        return sum(vals)
+                myset.add(s[i])
+        if len(myset) != 0:
+            count += 1
+        return count
+        
 
 s = "ccc"
 obj = Solution()
