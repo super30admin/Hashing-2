@@ -1,3 +1,6 @@
+// Technique: Using Hashmap. 
+// Hint: Get the sums array and then use the sums as keys and check if sum - k key is present in the hashmap.
+
 // TIME: O(n);
 // SPACE: O(n);
 // SUCCESS on LeetCode
