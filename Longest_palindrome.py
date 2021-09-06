@@ -1,7 +1,10 @@
+# Time Complexity : O(n)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
 
-# TC: O(n)
-# SC : O(n)
 
+# Your code here along with comments explaining your approach
 
 class Solution:
     def longestPalindrome(self, s: str) :
@@ -23,10 +26,9 @@ class Solution:
                 count += hashmap[i]
                 hashmap[i] = 0
         
-        return count
         
                 
-        
+                
                 
                 
         
