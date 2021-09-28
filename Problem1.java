@@ -1,3 +1,8 @@
+// Time Complexity : O(N)
+// Space Complexity : O(N)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
 import java.util.HashMap;
 
 public class Problem1 {
