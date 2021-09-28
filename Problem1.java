@@ -1,15 +1,22 @@
+import java.util.HashMap;
+
 public class Problem1 {
 
     public static int subarraySum(int[] nums, int k) { // brute force
         if(nums.length == 1)    return k == nums[0] ? 1 : 0;
-        int sum, count = 0;
-        for (int i = 0; i < nums.length; i++) {
-            sum = 0;
-            for (int j = i; j < nums.length; j++) {
-                sum += nums[j];
-                if(sum == k)    ++count;
-            }
+
+        int cur_sum = 0, count = 0;
+        HashMap<Integer, Integer> mapping = new HashMap<>();
+        mapping.put(0, 1);
+
+        for (int i : nums) {
+            cur_sum += i;
+            int diff = cur_sum - k;
+            if(mapping.containsKey(diff))   count += mapping.get(diff);
+            if(mapping.containsKey(cur_sum))    mapping.put(cur_sum, mapping.get(cur_sum) + 1);
+            else mapping.put(cur_sum, 1);
         }
+
         return count;
     }
 
