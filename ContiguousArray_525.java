@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 
 // Your code here along with comments explaining your approach
-class ContiguousArray {
+class ContiguousArray_525 {
     public int findMaxLength(int[] nums) {
         
         HashMap<Integer,Integer> map=new HashMap<>();

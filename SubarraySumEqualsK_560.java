@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 
 // Your code here along with comments explaining your approach
-class Solution {
+class SubarraySumEqualsK_560 {
     public int subarraySum(int[] nums, int k) {
         
         HashMap<Integer, Integer> map=new HashMap<>();
