@@ -1,7 +1,7 @@
 // Longest Palindrome
 
 // Time-Complexity- O(n) 
-// Space Complexity-O(n) - creating a hashset to keep track of the characters
+// Space Complexity-O(52)that is O(1) - creating a hashset to keep track of the characters max would be 52 since our program statements says lowercase and uppercase are allowed
 // passed test cases on leetcode-yes
 // faced problem-no
 
