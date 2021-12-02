@@ -1,4 +1,6 @@
 public class Problem3 {
+    //Time complexity : o(n)
+    //Space complexity : o(n)
     public int longestPalindrome(String s) {
         //if you encounter an element for the first time
         //put it in set, if you encounter it again and increment the countby2 & remove         //the element.
