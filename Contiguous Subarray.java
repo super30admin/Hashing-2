@@ -14,8 +14,9 @@ class Solution {
         
         for(int i=0; i < nums.length; i++){
             
+            //If 0 is encountered, decrement running sum i.e rSum by 1 and if 1 is encountered increment rSum by 1
             if(nums[i] == 0){
-                rSum -=1;
+                rSum -=1;       
             }else{
                 rSum +=1;
             }
