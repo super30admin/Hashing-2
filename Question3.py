@@ -1,7 +1,7 @@
 # Time Complexity : O(n)
 # Space Complexity : O(1)
 # Did this code successfully run on Leetcode : Yes
-# Any problem you faced while coding this : Learnt from online solutions. Tried on own but was able to arive at solution.
+# Any problem you faced while coding this : No.
 class Solution():
     def longestPalindrome(self, s):
         hash = set()
