@@ -31,7 +31,7 @@ counting all the values by removing the count of all distinct odd letters and th
  
 Complexity:
 Time:O(n)
-Space: O(1)
+Space: O(n) hash can be oN in the worst case
 
 
  """  

@@ -18,7 +18,7 @@ To find the maximum length, we need a dict to store the value of count (as the k
 
 Complexity
 Time: O(N)
-Space: O(1)
+Space: O(N) hash can be oN in the worst case
 
 
 """

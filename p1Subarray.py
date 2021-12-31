@@ -25,7 +25,7 @@ preSumFreq.put(0, 1) to cover those cases.
 
 Complexity
 Time: O(N)
-Space: O(1)
+Space: O(N) hash can be oN in the worst case
 
 
 """
