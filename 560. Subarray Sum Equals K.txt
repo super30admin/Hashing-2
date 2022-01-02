@@ -1,0 +1,33 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+//we use running sum here. when difference between 2 running sum at two indices is 7(k)..(X-y=k..so x-k=y) that menas we
+// have found a subarray with sum k. we check if we have found this difference before nd if yes then how many times.
+// if we found any sum which was already there we increase the value by 1.
+
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap();
+        int count = 0;
+        int rSum = 0;
+        map.put(0,1);
+        for(int i =0; i<nums.length;i++){
+            rSum=rSum+nums[i];
+                if(map.containsKey(rSum-k)){
+                count=count+map.get(rSum-k);
+            }
+            int currCount=0;
+             if(map.containsKey(rSum)){
+               currCount= map.get(rSum);
+             }
+            int newCount =currCount+1;
+            map.put(rSum, newCount);
+           
+        }
+        return count;
+    }
+}
