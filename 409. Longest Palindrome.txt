@@ -1,0 +1,59 @@
+// Time Complexity O(n)
+// Space Complexity :O(n)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+//solution 1
+//this is a smart approach to find the length of longest palindrome. palindrome consists of 2 occurences of each letter
+//and if its odd in length one letter can be at the middle without repetition
+//so we add letter in hashset at first occurence and remove at second occurence while adding 2 to final count
+//and finally we check if there is anything left in hashset, if it is meanss those are elements with single occurences
+//we smply add one to the final result which means we include one of those letters in palindrome 
+
+class Solution {
+    public int longestPalindrome(String s) {
+        HashSet<Character> set = new HashSet<>();
+        int answer=0;
+        for(int i =0; i<s.length(); i++){
+            if(set.contains(s.charAt(i))){
+                answer+=2;
+                set.remove(s.charAt(i));
+            }else{
+                set.add(s.charAt(i));
+                
+            }
+        }
+        if(set.isEmpty()){
+            return answer;
+        }else{
+            return answer+1;
+        }
+        
+    }
+}
+
+
+//solution 2
+//using array to store count of each character and then iterating again to find final result
+class Solution {
+    public int longestPalindrome(String s) {
+        int[] chars = new int[128];
+        int result = 0;
+        for(int i=0; i<s.length(); i++){
+            char c= s.charAt(i);
+            chars[c] = chars[c]+1;
+        }
+          for(int i=0; i<chars.length; i++){
+           
+        if(result%2==0 & chars[i]%2==1){
+            result++;
+        }
+              int add = chars[i]/2;
+              result= result + (add*2);
+        }
+        return result;
+    }
+}
+
