@@ -56,10 +56,36 @@ class Solution {
         // }
 
         return maxLen;
-
-
-
     }
+}
 
+//correct solution using rolling sum based on what was taught in class.
+/*
+time complexity : O(N) where N is the length of the input SubArraySumsEqualK
+space complexity : O(N) worst case all are 1s and we have to save
+                  increasing  sum as key
+*/
+public int findMaxLength(int[] nums)
+{
+  int max = Integer.MIN_VALUE;
 
+  Map<Integer, Integer> firstSeen = new HashMap<>();
+
+  firstSeen.put(0,-1);
+
+  int sum = 0;
+
+  for(int i = 0; i < nums.length; i++)
+  {
+      sum += nums[i] == 1 ? 1 : -1;
+
+      firstSeen.putIfAbsent(sum,i);
+
+      int index = firstSeen.get(sum);
+
+      if(max < i - index)
+          max = i - index;
+  }
+
+  return max;
 }
