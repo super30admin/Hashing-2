@@ -12,14 +12,19 @@ public:
             if(map.find(sum-k)!=map.end()){
                 count+= map[sum-k];
             }
-            else{
-                int value=0;
-                if(map.find(sum)!=map.end()) value = map[sum];
-                map.insert(make_pair(sum,value + 1));
+            
+            int value=0;
+            if(map.find(sum)!=map.end()) {
+                map[sum]++;
             }
+            map.insert(make_pair(sum,value + 1));
+            
         }
-                           return count;
-                          
+        for(auto it: map){
+            cout<<it.first<< " "<< it.second<< " "<<endl;        
+        }
+        
+        return count;                       
                            
         
         
