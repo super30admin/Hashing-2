@@ -1,3 +1,5 @@
+//Time Complexity :O(n)
+
 class LongestSubstring {
     public int longestPalindrome(String s) {
 
