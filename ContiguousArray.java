@@ -7,6 +7,8 @@
 
 //Leetcode: 525, Contiguous Array
 
+import java.util.*;
+
 public class ContiguousArray {
   public int findMaxLength(int[] nums) {
     if (nums == null || nums.length == 0) {

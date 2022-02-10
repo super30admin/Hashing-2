@@ -8,6 +8,8 @@
 
 //Leetcode: 560, Subarray Sum Equals K
 
+import java.util.*;
+
 public class SubarraySumEqualsK {
   public int subarraySum(int[] nums, int k) {
     if (nums == null || nums.length == 0) {
