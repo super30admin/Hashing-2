@@ -1,6 +1,8 @@
 def subarraySum(nums, k):
 #brute force approach for sub arry sum equals k. 
 #O(n^3) time complexity
+
+
    n = len(nums)
    count = 0
    for i in range(n):
@@ -11,4 +13,3 @@ def subarraySum(nums, k):
         count += sum == k
    return count
 print(subarraySum([1,1,1], 2))
-#print(subarraySum([1,2,3], 3))
