@@ -7,3 +7,7 @@
 
 
 ## Problem3 (https://leetcode.com/problems/longest-palindrome)
+
+
+
+// Problem2.java has O(n) time complexity and space complexity O(n)
