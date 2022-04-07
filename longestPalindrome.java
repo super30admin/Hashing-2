@@ -4,7 +4,35 @@ TC: O(n)
 SC : O(1) since hash map will have 26 key value pairs at max.
 */
 class Solution {
+    // Approach 1
     public int longestPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        
+        HashSet<Character> set = new HashSet<>();
+        int count = 0;
+        
+        for (int i = 0; i < s.length(); ++i) {
+            char c = s.charAt(i);
+            
+            if (set.contains(c)) {
+                // Add 2 because we have one element in the set and one in consideration
+                count += 2;
+                set.remove(c);
+            } else {
+                set.add(c);
+            }
+        }
+        
+        if (!set.isEmpty()) {
+            ++count;
+        }
+        return count;
+    }
+
+    // Approach 2
+    public int longestPalindrome_approach2(String s) {
         HashMap<Character, Integer> map = new HashMap<>();
         
         int maxLen = 0;
