@@ -22,6 +22,8 @@ public class LongestPalindrome {
             }
         }
 
+        // Adding 1 if we have unmatched characters in the map.
+        // These unmatched characters will create a odd length palindrome
         return set.size() == 0 ? s.length() : s.length() - set.size() + 1;
     }
 
