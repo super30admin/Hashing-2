@@ -5,6 +5,9 @@ import java.util.Map;
 // Space complexity: O(1)
 public class ContiguousArray {
 
+    // Pattern to remember - running sum
+    // Follow-up question - Give the entire subarray which has contiguous array of 1 & 0
+        // Possible solution - whenever we switch the max value maintain start and end position as well.
     public int findMaxLength(int[] nums) {
         if(nums == null || nums.length == 0) return 0;
 
@@ -18,10 +21,13 @@ public class ContiguousArray {
             else count -= 1;
 
             // Put the count value in a map
-            // key -> count value -> index at which we saw this count value
+            // key -> count    value -> index at which we saw this count value
             if(map.containsKey(count)) max = Math.max(max, i - map.get(count));
 
             // If the count value doesn't exist in the map then only put it in the map
+            // So, we are maintaining the farthest position.
+                // It means even though we see the similar count again, we are just maintaining the position where we first time found this count.
+                // This gives us the longest sub array
             else map.put(count,i);
         }
 
