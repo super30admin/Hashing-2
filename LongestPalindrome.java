@@ -1,4 +1,4 @@
-// Time complexity: O(n) where n is the number of elements in the array.
+// Time complexity: O(n) where n is the length of array.
 // Space complexity: O(1).
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
