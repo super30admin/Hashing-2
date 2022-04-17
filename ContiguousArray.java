@@ -22,6 +22,8 @@ public class ContiguousArray {
 
             // Put the count value in a map
             // key -> count    value -> index at which we saw this count value
+            // The reason for (i - map.get(count)) - It means somewhere we had a similar rSum and if we are getting the same rSum again
+                // that means we came across similar number of 0s and 1s after the last position where we saw that
             if(map.containsKey(count)) max = Math.max(max, i - map.get(count));
 
             // If the count value doesn't exist in the map then only put it in the map
