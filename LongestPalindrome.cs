@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Algorithms
 {
     public class LongestPalindrome
@@ -10,19 +12,25 @@ namespace Algorithms
         // Any problem you faced while coding this :  Referred Online
         public int longestPalindrome(String s)
         {
-            int[] count = new int[128];
-
-            foreach (char c in s.ToCharArray())
-                count[c]++;
-
-            int ans = 0;
-            foreach (int v in count)
+            HashSet<char> set = new HashSet<char>();
+            int result = 0;
+            char[] charArray = s.ToCharArray();
+            for(int i =0; i<charArray.Length; i++)
             {
-                ans += v / 2 * 2;
-                if (ans % 2 == 0 && v % 2 == 1)
-                    ans++;
+                char c = charArray[i];
+                if (set.Contains(c))
+                {
+                    result += 2;
+                    set.Remove(c);
+                }
+                else
+                {
+                    set.Add(c);
+                }
+                
             }
-            return ans;
+            if (set != null) result++;
+            return result;
         }
     }
 }
