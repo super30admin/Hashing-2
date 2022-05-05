@@ -1,3 +1,16 @@
+//Time complexity - O(N)+(O(N)-worst case)
+//Space complexity O(1);
+//Assume count as 0 initially
+//Take a map and intialise the mapping  with 0:1 to cover the corner case.
+//Traverse from beginning to the end by calculating the running sum at every index.
+//If the map has the rsum-k as key then increase the count as count+value at rsum-k key. 
+//if the map has rsum then update the value at jey rsum as +1.
+//else put(rsum,1);
+//at last return the count value which gives the max no.of subarrays with sum K.
+
+
+
+
 class Solution {
     public int subarraySum(int[] nums, int k) {
         HashMap<Integer,Integer>map = new HashMap<>();
