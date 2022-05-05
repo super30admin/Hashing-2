@@ -28,3 +28,31 @@ class Solution {
         return maxLength;
     }
 }
+// ------------------OPTIMIZED--------------------
+// Time Complexity :O(n)
+// Space Complexity :o(N)
+// Did this code successfully run on Leetcode :YES
+// Any problem you faced while coding this :nO
+
+class Solution {
+    public int findMaxLength(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int result = 0;
+        map.put(0, -1);
+        int sum = 0;// We'll add runningSum in hashmap with indices, wherever runningSum repeats
+                    // that means we have balanced subarray and calculate maximum length
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                sum--;
+            } else {
+                sum++;
+            }
+            if (map.containsKey(sum)) {
+                result = Math.max(result, i - map.get(sum));
+            } else {
+                map.put(sum, i);
+            }
+        }
+        return result;
+    }
+}
