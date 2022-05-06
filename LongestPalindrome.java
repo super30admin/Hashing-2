@@ -2,26 +2,23 @@
 // Space Complexity : O(1)
 // Did this code successfully run on Leetcode : YES
 // Any problem you faced while coding this : NO
-
+import java.util.HashSet;
 
 class LongestPalindrome {
     public int longestPalindrome(String s) {
-        int[] count = new int[128];
-        //ASCII value is used as arr index and count is increased
-        for (char c: s.toCharArray())
-            count[c]++;
-
-        int result = 0;
-        int odd =0;
-        for (int v: count) {
-            if(v % 2 != 0){
-                odd =1;
-                result += (v-1);
+        HashSet<Character> set = new HashSet<>();
+        int res =0;
+        for(char ch : s.toCharArray()){
+            if(set.contains(ch)){
+                res += 2;
+                set.remove(ch);
             }
             else{
-                result += v;
+                set.add(ch);
             }
         }
-        return result+odd;
+        if(set.isEmpty())
+            return res;
+        return res+1;
     }
 }
