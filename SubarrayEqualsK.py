@@ -1,3 +1,5 @@
+#Time complexity: O(n)
+#Space complexity: O(n)
 class Solution:
     def subarraySum(self, nums, k: int) -> int:
         dict1={0:1}

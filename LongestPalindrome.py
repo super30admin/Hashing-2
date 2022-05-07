@@ -1,3 +1,5 @@
+#Time complexity:O(n)
+#Space complexity:O(n)
 class Solution:
     def longestPalindrome(self, s: str) -> int:
         dict1,res,flag={},0,0

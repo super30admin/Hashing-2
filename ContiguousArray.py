@@ -1,3 +1,5 @@
+#Time complexity:O(n)
+#Space complexity:O(n)
 class Solution:
     def findMaxLength(self, nums) -> int:
         dict1={0:-1}
