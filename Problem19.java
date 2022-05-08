@@ -7,6 +7,23 @@ import java.util.*;
  * space complexity: O(26) => O(1)
  * Did this code successfully run on Leetcode : yes
  * Any problem you faced while coding this : no
+ * 
+ * 1. Store occurence of each letter in hashMap
+ * 
+ * Ex. a b c d d d e d e l
+ * HashMap
+ * a : 1
+ * b : 1
+ * c : 1
+ * d : 4
+ * e : 2
+ * l : 1
+ * 
+ * 2. Iterate the HashMap and 
+ *      if value is even, add the value
+ *      if value is odd, add value-1
+ * 
+ * 3. Iterate thru the values and check if 
  */
 public class Problem19{
     public int longestPalindrome(String s) {
