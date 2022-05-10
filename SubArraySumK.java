@@ -1,5 +1,8 @@
 import java.util.HashMap;
 
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
 public class SubArraySumK {
   public static int SubArrSum(int[] nums, int k) {
     int count = 0, sum = 0;
