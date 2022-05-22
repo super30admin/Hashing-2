@@ -19,6 +19,25 @@ def cont_subarray(nums):
             #Mapping dictionary for checking future occurances
             dict[count]=i
     return subarray
-        
 
-print(cont_subarray([0,0,1,0,0,1,1]))
+
+def contsubarr(nums):
+        d={}
+        d[0]=-1
+        rSum=0
+        maxi=0
+        for i in range(len(nums)):
+            if nums[i]==1:
+                rSum+=1
+            else:
+                rSum-=1
+            if rSum in d:
+                maxi=max(maxi,(i-d[rSum]))
+            else:
+                d[rSum]=i
+        return maxi
+    
+
+print(contsubarr([0,1,0]))   
+
+print(contsubarr([0,0,1,0,0,1,1]))

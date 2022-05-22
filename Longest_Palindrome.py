@@ -19,6 +19,19 @@ def longestPalindrome(s):
         
     return length
     
+#professor Idea of one pass
+def longpal(s):
+    hashset=set()
+    l=0
+    for i in s:
+        if i in hashset:
+            l+=2
+            hashset.remove(i)
+        else:
+            hashset.add(i)
+    if hashset: l+=1    
+    return l
 
 
 print(longestPalindrome("aaaabbcccddeeee"))
+print(longpal("aaaabbcccddeeee"))

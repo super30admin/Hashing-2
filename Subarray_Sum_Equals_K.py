@@ -1,3 +1,9 @@
+
+#Time Complexity O(N) + O(N) 
+#Space Complexity O(N) hashset for maintaining counts
+#It successfully runs on the leetcode
+
+
 def sum_subarray(nums,k):
     ans =0
     #Initializing prefixsum with first number of array
@@ -15,4 +21,23 @@ def sum_subarray(nums,k):
         dict[i]=dict.get(i,0)+1
     return ans
 
+#Approach2: maintaining running sum 
+#Time Complexity O(N)
+#Space Complexity O(N) hashset for maintaining running sum
+#It successfully runs on the leetcode
+#professors example(Better)
+def sumsubarray(nums,k):
+        d = {}
+        d[0] = 1
+        rSum=0
+        c=0
+        for i in range(len(nums)):
+            rSum+=nums[i]
+            if rSum-k in d:
+                c+=d[rSum-k]
+            d[rSum]=d.get(rSum,0)+1
+        return c
+
+print(sumsubarray([1,1,1],2))
+print(sumsubarray([1,2,3],3))
 print(sum_subarray([1,2,3],3))
