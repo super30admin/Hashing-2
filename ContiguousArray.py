@@ -1,5 +1,5 @@
 # Time Complexity: O(n); n is length of nums array
-# Space Complexity:O(m); m is hashmap size
+# Space Complexity:O(n); if all elements are different
 # We find the running sum and if not already present in the add it, else compare difference of its value with current 
 # solution with the map's value and update  max accordingly
 class Solution:
