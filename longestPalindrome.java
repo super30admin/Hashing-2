@@ -1,6 +1,6 @@
 class Solution {
     //Time complexity: O(n)
-    //Space complexity: O(n)
+    //Space complexity: O(1)
     public int longestPalindrome(String s) {
         Map<Character,Integer> hm=new HashMap<>();
         int r=0;
