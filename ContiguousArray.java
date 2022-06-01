@@ -7,7 +7,7 @@
 
 // Your code here along with comments explaining your approach
 
-class ContiguousArray 
+class ContiguousArray {
 
     public int findMaxLength(int[] nums) {
         
@@ -28,6 +28,7 @@ class ContiguousArray
             
     return max;
     
+}
 }
         
 
