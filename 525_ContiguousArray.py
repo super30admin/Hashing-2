@@ -1,6 +1,6 @@
 """
 Leetcode - https://leetcode.com/problems/contiguous-array/ (submitted)
-TC - O(N), SC - O(2) : since there are only two keys in dictionary (verify)
+TC - O(N), SC - O(N) : saving rsums in hashmap
 Lecture - https://youtu.be/2riNDAD4GgM
 NOTE - Running sum can be used for finding a target in a contiguous array
 
