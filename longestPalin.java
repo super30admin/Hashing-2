@@ -1,3 +1,10 @@
+// Time Complexity : O(n) iterate over the elements of the String.
+// Space Complexity : O(n) worst case
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+// Your code here along with comments explaining your approach
+
 class Solution {
     public int longestPalindrome(String s) {
         HashSet<Character> hSet = new HashSet<>();
