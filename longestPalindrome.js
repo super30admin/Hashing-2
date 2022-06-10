@@ -22,3 +22,35 @@
     if(set.size !== 0) count++;
     return count;
 };
+
+
+//Hash Map Solution
+
+//  var longestPalindrome = function(s) {
+//     let hashMap = new Map();
+//     let count = 0;
+//     for(let i = 0; i < s.length; i++) {
+//         if(hashMap.has(s[i])) {
+//             hashMap.set(s[i],hashMap.get(s[i]) + 1);
+//         } else {
+//             hashMap.set(s[i],1);
+//         }
+//     }
+//     let oneUsedFlag = false;
+//     hashMap.forEach((value,key) => {
+//         let c = 0;
+//         if(value%2 !== 0) {
+//             c = Math.floor(value/2)*2;
+//             if(!oneUsedFlag) {
+//                 c += 1;
+//                 oneUsedFlag = true;
+//             }
+//             hashMap.set(key,value-c);
+//         } else {
+//             c = value;
+//             hashMap.set(key,value-c);
+//         }
+//         count += c;
+//     });
+//     return count;
+// };
