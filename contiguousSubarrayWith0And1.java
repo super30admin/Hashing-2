@@ -16,6 +16,8 @@ class Solution {
             } else {
                 ++sum;
             }
+            // We don't want to update map in this case. We want to keep the first index at which sum was found
+            // so that we can get max length
             if (sumToIndexMap.containsKey(sum)) {
                 maxLen = Math.max(maxLen, i - sumToIndexMap.get(sum));
             } else {
