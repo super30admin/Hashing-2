@@ -1,4 +1,4 @@
-//o(nlogn)
+//o(n)
 class Solution {
     public int longestPalindrome(String s) {
         int res = 0;
