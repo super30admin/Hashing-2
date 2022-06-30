@@ -14,12 +14,7 @@ class Solution {
             if(hm.containsKey(diff)){
                 tSum = tSum + hm.get(diff);
             }
-            if(hm.containsKey(rSum)){
-                hm.put(rSum, hm.get(rSum) + 1);
-            }
-            else {
-                hm.put(rSum,1);
-            }
+            hm.put(rSum, hm.getOrDefault(rSum,0)+1);
         }
         return tSum;
     }
