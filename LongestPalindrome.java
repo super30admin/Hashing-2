@@ -1,4 +1,6 @@
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 /**
  * Time Complexity: O(N)
@@ -21,5 +23,35 @@ public class LongestPalindrome {
             counter += 1;
         }
         return counter;
+    }
+
+    // Using HashMap
+    public int longestPalindrome(String s) {
+        int count = 0;
+        Map<Character, Integer> hashMap = new HashMap<>();
+        // Storing key value in the hashMap
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            hashMap.put(ch, hashMap.getOrDefault(ch, 0) + 1);
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (hashMap.containsKey(s.charAt(i))) {
+                int value = hashMap.get(s.charAt(i));
+                if (value % 2 == 0) {
+                    count += hashMap.get(s.charAt(i));
+                    hashMap.remove(s.charAt(i));
+                } else {
+                    count += hashMap.get(s.charAt(i)) - 1;
+                    hashMap.put(s.charAt(i), 1);
+                }
+            }
+        }
+
+        if (hashMap.size() > 0) {
+            count++;
+        }
+
+        return count;
     }
 }
