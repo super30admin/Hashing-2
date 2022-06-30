@@ -1,6 +1,8 @@
 #time complexity: O(n)
 #space complexity: O(n)
 #approach: even number of elements are added as it is and odd count of elements are added only one in total.
+# increment the rsum's value in hashmap by 1
+# return the count
 
 class Solution:
     def longestPalindrome(self, s: str) -> int:
