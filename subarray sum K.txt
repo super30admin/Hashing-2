@@ -1,0 +1,19 @@
+Time Complexity = O(n)
+Space Complexity = O(n)
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        hashmap = {}
+        hashmap[0] = 1
+        rsum = 0
+        Count = 0
+        for i in range(len(nums)):
+            rsum += nums[i]
+            if ((rsum-k) in hashmap.keys()):
+                Count += hashmap[rsum-k]
+            if rsum in hashmap.keys():
+                hashmap[rsum] = hashmap[rsum] + 1
+            else:
+                hashmap[rsum] = 1       
+        return Count
+            
