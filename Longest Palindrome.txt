@@ -1,0 +1,20 @@
+Time Complexity = O(n)
+Space Complexity = O(1)
+
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        Hashset = []
+        count = 0
+        for i in range(len(s)):
+            c = s[i]
+            if c in Hashset:
+                count += 2
+                Hashset.remove(c)
+            else:
+                Hashset.append(c)
+                
+        if len(Hashset)!=0:
+            count+= 1
+        
+        return count
+            
