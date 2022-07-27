@@ -20,11 +20,13 @@ class Solution:
                 rSum+=1 
                 
             else:      #else, decrease the running sum by 1
-                
-                rSum-=1    
+                 
+                rSum-=1   
+
+             #basically, whenever the running sum is zero, it means the array past that is balanced and we are going to update the length with the maximum value we got.  
                 
             if rSum in d: #check if running sum is already in the hashmap, if yes compare the difference of index and value of runningSum in hashmap with the past max value, and make the resultant as new max 
-                          #basically, whenever the running sum is zero, it means the array past that is balanced and we are going to update the length with the maximum value we got.
+                         
                 ans = max(ans, i - d[rSum])  
                 
             else:  #if the value is not found, then initialize it in the hashmap
