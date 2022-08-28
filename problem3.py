@@ -9,26 +9,15 @@ Any Difficulty: No
 class Solution:
     def longestPalindrome(self, s: str) -> int:
         ln = 0
-        m = {}
+        cnt_set = set({})
         for char in s:
-            if char in m.keys():
-                m[char] += 1
+            if char not in cnt_set:
+                cnt_set.add(char)
             else:
-                m[char] = 1
+                ln += 2
+                cnt_set.remove(char)
         
-        one_exists = False
-        
-        for k in m.keys():
-            if m[k] % 2 == 0:
-                ln += m[k] 
-            elif m[k] == 1:
-                one_exists = True
-            else:
-                ln += m[k] -1
-                one_exists = True
-                
-        
-        if one_exists:
+        if len(cnt_set):
             return ln + 1
         
         return ln
