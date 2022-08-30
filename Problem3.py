@@ -18,3 +18,6 @@ def LongestPalindrome(self, str1):
 				max_length += (i - 1) # If its not even then add that (value - 1) which is an even again
 				one_character = 1 # One character which is in the middle of the palindrome string
 		return max_length + one_character
+
+# Time Complexity -> o(n)
+# Space Complexity -> o(n)
