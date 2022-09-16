@@ -1,5 +1,5 @@
-//Time Compexity : O(n)
-//Space Complexity : O(n)
+//Time Compexity : O(n)  n is size of array 
+//Space Complexity : O(n) -- because we are using HashMap for storage
 // submission successful on leetcode
 class Solution {
     public int findMaxLength(int[] nums) {

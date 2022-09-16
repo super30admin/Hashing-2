@@ -1,5 +1,5 @@
-// Time complexity : O(n)
-// Space Complexity: O(1) because we valid ascii characters
+// Time complexity : O(n), n length of string because here the length of string comes into picture
+// Space Complexity: O(1) because we have valid ascii characters
 // submission successful on leetcode
 class Solution {
     public int longestPalindrome(String s) {
