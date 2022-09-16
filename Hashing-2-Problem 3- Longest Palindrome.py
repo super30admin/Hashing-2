@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #19 {Easy}
+ FAANMG Problem #19 {Easy}
 
 409. Longest Palindrome
 

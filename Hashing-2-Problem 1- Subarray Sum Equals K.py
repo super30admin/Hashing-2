@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #17 {Medium}
+ FAANMG Problem #17 {Medium}
 
 
 560. Subarray Sum Equals K

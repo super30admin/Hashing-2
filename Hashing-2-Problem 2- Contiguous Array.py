@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #18 {Medium}
+ FAANMG Problem #18 {Medium}
 
 
 525. Contiguous Array
