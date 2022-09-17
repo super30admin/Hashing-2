@@ -1,10 +1,10 @@
 # Time Complexity : O(n)
-# Space Complexity : O(n)
-# Did this code successfully run on Leetcode :
+# Space Complexity : O(1) as the max size of the hashset is 26 which is the number of letters in the alphabet.
+# Did this code successfully run on Leetcode : Yes
 
 # using hashset
 def longestPalindrome(s: str) -> int:
-    hashSet = set() #after iteration through s, this set will contain all characters which have an add count
+    hashSet = set() #after iterating through s, this set will contain all characters which have an add count
         
     for char in s:
         if char not in hashSet:
