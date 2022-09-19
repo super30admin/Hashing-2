@@ -17,3 +17,6 @@ class Solution:
             else:
                 dict_nums[rsum] += 1
         return count
+
+# Time complexity: O(N)
+# space Complexity: O(N)
