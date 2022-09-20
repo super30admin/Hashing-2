@@ -1,5 +1,7 @@
 // TC: O(n)
 // SC: O(n)
+// Solved on Leetcode
+// No problems faced
 class Solution {
     public int findMaxLength(int[] nums) {
         if (nums == null || nums.length == 0) {
