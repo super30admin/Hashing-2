@@ -1,5 +1,7 @@
 // TC: O(n)
 // SC: O(n)
+// Solved on Leetcode
+// No problems faced
 class Solution {
     public int subarraySum(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
