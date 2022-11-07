@@ -1,3 +1,4 @@
+#TC: O(n), SC: O(n)
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         count, rsum, rsum_freq = 0, 0, collections.defaultdict(int)
