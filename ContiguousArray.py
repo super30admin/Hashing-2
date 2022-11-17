@@ -1,17 +1,14 @@
 """
-    Problem Statement: 
+    Problem Statement: Given a binary array nums, return the maximum length of a 
+                       contiguous subarray with an equal number of 0 and 1.
 
-    Approach: 
+    Time complexity: O(n)
 
-    Time complexity: 
-
-    Space complexity: 
+    Space complexity: O(n)
 
     Accepted on LeetCode? Yes! 
 
     LeetCode Link: https://leetcode.com/problems/contiguous-array/
-
-    Date: 15 November 2022
 """
 from typing import List
 
