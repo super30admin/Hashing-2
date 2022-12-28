@@ -1,0 +1,38 @@
+// Time Complexity : o( n)
+// Space Complexity : o(n)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+/*
+*  keep a runnning sum .
+*  Have a hash map of running sum and number of times it has occurred
+*  y = rsum - k  [ y = x - z]
+*  if y is already seen then increment the result by number of times its seen . if not seen yet add it to the map
+* */
+
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int rsum = 0;
+        int result = 0 ;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0,1);
+        for(int i =0; i< nums.length; i++){
+            rsum += nums[i];
+
+            int y = rsum - k;
+            if(map.containsKey(y)){
+                result += map.get(y);
+            }
+
+            if(!map.containsKey(rsum)){
+                map.put(rsum, 0);
+            }
+
+            map.put(rsum, map.get(rsum) +1);
+        }
+
+        return result;
+    }
+}

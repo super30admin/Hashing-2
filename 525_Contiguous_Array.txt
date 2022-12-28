@@ -1,0 +1,34 @@
+// Time Complexity : o( n)
+// Space Complexity : o(n)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+/*
+*  keep a runnning sum . when 0 occurs subract by 1 when 1 occurs increment by 1.
+*  Have a hash map pf running sum and index it was first seen
+*  if  running sum that is previously seen occurs it means that there are equal 0 and 1 in the difference subarray ( z = x-y)
+*  Calculate the result as the max length subarray seen so far
+* */
+
+class Solution {
+    public int findMaxLength(int[] nums) {
+        int rsum =0;
+        HashMap<Integer, Integer> map = new HashMap();
+        map.put(0, -1);
+        int res = 0;
+        for(int i =0; i < nums.length; i++){
+            rsum+= nums[i] == 0 ? -1 : 1;
+
+            if(map.containsKey(rsum)){
+                int z = i - map.get(rsum);
+                res = Math.max(res,z );
+            } else{
+                map.put(rsum, i);
+            }
+
+        }
+        return res;
+    }
+}
