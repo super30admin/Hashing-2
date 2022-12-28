@@ -1,0 +1,21 @@
+// Time Complexity : O(N)
+// Space Complexity : O(N)
+// Did this code successfully run in leetcode : Yes
+// Any problems faced : No
+// rsum is used a key in hashmap with it's frequency as value
+// rsum - target gives the element to be found to get the subarray sum equals target
+
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        int rsum = 0, result = 0;
+        unordered_map<int, int> mp;
+        mp[0] = 1;
+        for(int i = 0; i < nums.size(); i++) {
+            rsum += nums[i];
+            result += mp[rsum - k]; // if any value is not present by default it's value will be 0
+            mp[rsum]++;
+        }
+        return result;
+    }
+};
