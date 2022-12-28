@@ -1,3 +1,5 @@
+TC-O(N)
+SC-O(N)
 class Solution(object):
     def subarraySum(self, nums, k):
         """
