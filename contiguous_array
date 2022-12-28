@@ -1,0 +1,28 @@
+// Time Complexity : O(N)
+// Space Complexity : O(N);
+// Did this code successfully run in leetcode : Yes
+// Any problems faced : No
+// hashmap is used with rsum(decr for 0 and incr for 1) as the key and the first occurance of it as the value.
+// for each rsum we check with it's first occurance and update the result accordingly
+
+class Solution {
+public:
+    int findMaxLength(vector<int>& nums) {
+
+        // i value is increased in for loop because the value in map will be 0 if the index is 0 or the key is not present in the map, to avoid that indeces are stored by incrementing their index with 1
+
+        int result = 0, rsum = 0;
+        unordered_map<int, int> mp;
+        mp[0] = 0; 
+        for(int i = 1; i <= nums.size(); i++) {
+            if(nums[i - 1] == 0) rsum--;
+            else rsum++;
+            if(mp[rsum] == 0 && rsum != 0) {
+                mp[rsum] = i;
+            } else {
+                result = max(result, i - mp[rsum]);
+            }
+        }
+        return result;
+    }
+};

@@ -1,0 +1,26 @@
+// Time Complexity : O(N) where N is the length of the string
+// Space Complexity : O(1)
+// Did this code successfully run in leetcode : Yes
+// Any problems faced : No
+// for all odd occurances of characters they are pushed into the set and if the character occurs for the even time, count is incremented by 2
+// size of set is used if an odd length palindrome can be formed
+
+class Solution {
+public:
+    int longestPalindrome(string s) {
+        int count = 0;
+        unordered_set<char> st;
+        for(int i = 0; i < s.size(); i++) {
+            if(st.find(s[i]) == st.end()) {
+                st.insert({s[i]});
+            } else {
+                count += 2;
+                st.erase(s[i]);
+            }
+        }
+        if(st.size() > 0) {
+            count++;
+        }
+        return count;
+    }
+};
