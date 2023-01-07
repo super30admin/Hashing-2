@@ -2,13 +2,10 @@
 # O(N)  - Length of the arry
 
 # Space Complexity :
-# O(1) - the hasp map size has a max limit of 26
+# O(1) - There is no auxillary space being allocated
 
 # Did this code successfully run on Leetcode :
 #Yes
-
-# Any problem you faced while coding this :
-#No
 
 #To find number of subarrays that sum to k, keep a running sum from the first element to each of the next element in the list of numbers.
 # Each time a (running sum - k) appears in the in the list of running sums already found, it means that subarray from the previous point to now sums to k and we increment our count by how many times that runnning sum was found.
