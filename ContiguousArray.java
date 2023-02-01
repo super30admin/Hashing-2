@@ -16,7 +16,7 @@ public class ContiguousArray {
             System.out.println(maxLength);
         }
         public int findMaxLength(int[] nums) {
-           int maxLength=0, rsum = 0;
+            int maxLength=0, rsum = 0;
             Map<Integer, Integer> map = new HashMap<>();
             map.put(0, -1);
             for(int i = 0; i < nums.length; i++){
@@ -25,11 +25,9 @@ public class ContiguousArray {
                 } else if(nums[i] == 1){
                     rsum ++;
                 }
-                if(!map.containsKey(rsum)){
-                    map.put(rsum, i);
-                }else if(map.containsKey(rsum)){
+                if(map.containsKey(rsum)){
                     maxLength = Math.max(maxLength, i - map.get(rsum));
-                }
+                } else {map.put(rsum, i);}
             }
             return maxLength;
         }
