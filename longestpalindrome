@@ -1,0 +1,19 @@
+class Solution {
+    public int longestPalindrome(String s) {
+        char ch; int len=0;
+        HashSet<Character> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++){
+             ch=s.charAt(i);
+        if(!set.contains(ch)){
+            set.add(ch);
+        }
+        else{set.remove(ch); len+=2;}
+        } 
+
+        if(!set.isEmpty()){
+            len+=1;
+        }
+
+        return len;
+    }
+}
