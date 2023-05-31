@@ -9,22 +9,22 @@ Any problem you faced while coding this : No
 
 
 """
-class Solution:
-    def findMaxLength(self, nums: List[int]) -> int:
-        size=2*len(nums)+1
-        arr=[-2]*size
-        arr[len(nums)]=-1
-        maxlen=0
+class Solution(object):
+    def findMaxLength(self, nums):
+        res={0:-1}
         count=0
+        maxlen=0
 
         for i in range(len(nums)):
-            if nums[i]==0:
-                count+=-1
-            else:
+            if nums[i]==1:
                 count+=1
-            if arr[count+len(nums)]>=-1:
-                maxlen=max(maxlen,i-arr[count+len(nums)])
             else:
-                arr[count+len(nums)]=i
+                count-=1
+            if count in res:
+                maxlen=max(maxlen,i-res[count])
+            else:
+                res[count]=i
         return maxlen
+
+
             
