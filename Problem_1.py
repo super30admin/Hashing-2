@@ -11,13 +11,18 @@ Any problem you faced while coding this : No
 
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        res=0
-        curSum=0
-        presum={0:1}
+        res={0:1}
+        count=0
+        ans=0
 
-        for n in nums:
-            curSum+=n
-            diff=curSum-k
-            res+=presum.get(diff,0)
-            presum[curSum]=1+presum.get(curSum,0)
-        return res
+        for i in range(len(nums)):
+            count+=nums[i]
+            if count-k in res:
+                ans+=res[count-k]
+                # res[count-k]-=1
+            
+            if count in res:
+                res[count]+=1
+            else:
+                res[count]=1
+        return ans

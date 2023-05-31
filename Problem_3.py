@@ -9,16 +9,29 @@ Any problem you faced while coding this : No
 
 """
 
-class Solution:
-    def longestPalindrome(self, s: str) -> int:
+class Solution(object):
+    def longestPalindrome(self, s):
+        hmap={}
 
-        count=[0]*128
+        for i in s:
+            if i in hmap:
+                hmap[i]+=1
+            else:
+                hmap[i]=1
+        
+        odd=0
+        maxlen=0
 
-        for c in s:
-            count[ord(c)]+=1
-        ans=0
-        for i in count:
-            ans+=i//2*2
-            if ans%2==0 and i%2==1:
-                ans+=1
-        return ans
+        for values in hmap.values():
+            if values%2==0:
+                maxlen+=values
+            elif values%2==1:
+            
+                if values!=1:
+                    maxlen+=values-1
+                    odd=1
+                else:
+                    odd=1
+
+        return maxlen+odd
+
