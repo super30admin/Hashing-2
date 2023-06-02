@@ -1,3 +1,5 @@
+//tc = O(n). sc = O(1)
+
 class Solution {
     public int longestPalindrome(String s) {
         HashSet<Character> set = new HashSet<>();
