@@ -1,4 +1,5 @@
 class Solution:
+    # Time Complexity: O(n)
     def subarraySum(self, nums: List[int], k: int) -> int:
         map_c = {}
         r_sum = 0
