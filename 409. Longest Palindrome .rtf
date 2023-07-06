@@ -1,0 +1,27 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;\red25\green25\blue25;}
+{\*\expandedcolortbl;;\cssrgb\c12941\c12941\c12941;}
+\margl1440\margr1440\vieww9680\viewh6580\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf2 \expnd0\expndtw0\kerning0
+class Solution:\
+    def longestPalindrome(self, s: str) -> int:\
+        \
+        if not s:\
+            return 0\
+        \
+        my_dict = \{\}\
+        res = 0\
+        for c in s:\
+            if c in my_dict:\
+                res += 2\
+                my_dict.pop(c)\
+            else:\
+                my_dict[c] = 1\
+        if my_dict:\
+            return res + 1\
+        else:\
+            return res}
