@@ -15,7 +15,6 @@ class Solution:
         
         return count
 
-
 input_string = "abccccdd"
 solution = Solution()
 result = solution.longestPalindrome(input_string)
