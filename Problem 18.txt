@@ -1,0 +1,27 @@
+//560. Subarray Sum Equals K
+//TC:O(n)
+//SC:O(n)
+
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int rsum=0;
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int count=0;
+        map.put(0,1);
+
+        for(int i=0;i<nums.length;i++)
+        {
+            rsum+=nums[i];
+            int comp=rsum-k;
+            if(map.containsKey(comp)){
+                count+=map.get(comp);
+            }if(map.containsKey(rsum)){
+                map.put(rsum,map.get(rsum)+1);
+            }else{
+                map.put(rsum,1);
+            }
+        }
+
+        return count;
+    }
+}
