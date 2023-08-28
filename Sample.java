@@ -5,7 +5,5 @@
 
 // Your code here along with comments explaining your approach
 class Sample {
-    public static void main(String[] args) {
-        System.out.println("testing");
-    }
+
 }
