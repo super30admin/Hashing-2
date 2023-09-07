@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class ContiguousArray {
     //TC is O(N), as we are just going over the complete array
-    //SC is O(N), as in the worst where there are no repeating value and we need to store all the values in HashMap.
+    //SC is O(N), as in the worst where there are only repeating value we need to store all the values in HashMap.
     public int findMaxLength(int[] nums){
         if(nums == null || nums.length == 0){    //Base case to check if array is empty
             return 0;
