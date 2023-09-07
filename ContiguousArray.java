@@ -9,8 +9,8 @@ public class ContiguousArray {
         }
 
         HashMap<Integer, Integer> map = new HashMap<>();
-        int rsum=0;
-        int max=0;
+        int rsum=0;         //store unique running sum
+        int max=0;          //current max value
         map.put(0,-1); //First element of Hash Map
         for(int i=0;i<nums.length;i++){
             if(nums[i]==0){   //If value is 0 then subtract from running sum
