@@ -1,0 +1,15 @@
+#time complexity: O(n)
+#space complexity: O(1)
+#did it run on leetcode: yes
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        set1 = []
+        count = 0 
+        for i in range(len(s)):
+            c = s[i]
+            if c in set1:
+                count+=2
+                set1.remove(c)
+            else: set1.append(c)
+        if len(set1)!=0: count+=1
+        return count
