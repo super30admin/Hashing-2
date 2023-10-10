@@ -1,0 +1,21 @@
+Time complixity --> O(26)
+Space complixity -->)(26)
+
+
+class Solution {
+    public int longestPalindrome(String s) {
+        HashSet<Character> set = new HashSet<>();
+        int count = 0;
+
+        for(int i =0; i<s.length();i++ ) {
+            char c = s.charAt(i);
+            if(set.contains(c)) {  // if the character is repeating increase the count by 1.
+                count+=2;
+                set.remove(c);
+            }
+            else set.add(c);   // if the character is coming to thr set for a first time add the character.
+        }
+        if(!set.isEmpty()) count++;  // if the set is not empty then increase the count value by 1.
+        return count;
+    }
+}
