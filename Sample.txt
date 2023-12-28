@@ -1,0 +1,43 @@
+Problem Statement : Count the number of subarray whos sum equals K
+Time Complexity : O(n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : yes
+Any problem you faced while coding this : no
+
+Your code here along with comments explaining your approach in three sentences only :
+To find the subarrays who's sum equals k we use running sum pattern.
+We use hashmap to store the running sum and nuc of times it appears (counts)
+Here we have target running sum of z i.e K and current running sum x
+Hence we need to find the running sum of y i.e.
+    running sum at y = running sum at x - running sum at z
+We check if the running sum of y exists in the hashmap if yes we increase the count by count of running sum of y
+else we put the running sum and its count in hashmap
+
+Problem Statement : Longest contiguous balanced subarray
+Time Complexity : O(n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : Yes
+Any problem you faced while coding this : Nope
+
+Your code here along with comments explaining your approach in three sentences only :
+To check if the subarray is balanced we've used running sum pattern where in increase the count by 1 if value = 1
+and decrease when value = 0.
+We have a map to store the unique curr running sum and at what index it exists. We iterate and check if the
+running sum exists
+if yes i.e. y and the current is x
+hence the running sum between them is
+ runningSum at z = runningSum at x - runningSum at y
+if no, we put the running sum and its index in hashmap
+We also maintain a max count between x and y index to find the longest contiguous subarray
+Note: the subarray is balanced only if the running sum at z is 0
+
+Problem Statement : Longest valid palindrome
+Time Complexity : O(n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : yes
+Any problem you faced while coding this : no
+
+Your code here along with comments explaining your approach in three sentences only :
+We have used Hashset to balance the palindrome. We iterate over the string and add unique character to hashset and
+remove if we find 1 more pair of the character.
+Thus, if there is still one more character in the hashset it can be the middle element.
