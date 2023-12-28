@@ -1,7 +1,7 @@
 #problem: Contiguous Array
 #time complexity: O(n)
 #space complexity: O(1)
-#a
+#approach: using hashmap to store the running sum and its index. If the running sum is already in the hashmap, we update the max_length by max(max_length, i - hashmap[running_sum]). If the running sum is not in the hashmap, we add it to the hashmap.
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
         hashmap = {0: -1}
