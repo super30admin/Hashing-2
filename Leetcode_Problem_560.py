@@ -1,7 +1,7 @@
 #problem: Subarray Sum Equals K
 #time complexity: O(n)
 #space complexity: O(1)
-#
+#approach: using hashmap to store the running sum and its frequency, if the running sum - k is in the hashmap, we increase the count by the frequency of running sum - k. In the end, we return the count.
 
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int: 

@@ -1,7 +1,7 @@
 #problem: Contiguous Array
 #time complexity: O(n)
 #space complexity: O(1)
-#
+#a
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
         hashmap = {0: -1}
