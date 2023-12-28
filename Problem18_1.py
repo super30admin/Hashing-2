@@ -1,6 +1,6 @@
 '''
 Time complexity: O(n)
-Space complexity: O(n)
+Space complexity: O(1)
 '''
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
