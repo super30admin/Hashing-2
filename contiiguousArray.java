@@ -1,4 +1,6 @@
 import java.util.HashMap;
+//TC On
+//SC O(1)
 
 class contiguousArray {
     public int findMaxLength(int[] nums) {

@@ -1,5 +1,6 @@
 import java.util.HashSet;
-
+//TC:- On
+//SC:-O(1)
 class Solution {
     public int longestPalindrome(String s) {
         int count=0;
