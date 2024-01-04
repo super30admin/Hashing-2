@@ -1,0 +1,26 @@
+#Count Characters: Iterate through the input string, counting the occurrences of each character in a dictionary.
+#Calculate Palindrome Length: Calculate the length of the longest palindrome by summing up even counts of characters and considering at most one character with an odd count as the center.
+#Time Complexity: The algorithm has a linear time complexity of O(n), where n is the length of the input string, as it iterates through the string once to count character occurrences.
+
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        char_count = {}
+        
+        # Count occurrences of each character
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+        
+        palindrome_length = 0
+        odd_count = 0
+        
+        # Calculate the length of the palindrome
+        for count in char_count.values():
+            palindrome_length += count // 2 * 2
+            if count % 2 == 1:
+                odd_count = 1
+        
+        return palindrome_length + odd_count

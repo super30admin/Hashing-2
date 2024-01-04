@@ -1,0 +1,23 @@
+# Subarray Sum Equals
+# Time complexity: O(n)
+# Space Complexity: O(n)
+# Approach: Hasmap with Running sum method
+
+class Solution(object):
+    def subarraySum(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        count = 0
+        running_sum = 0
+        sum_count = {0: 1}
+
+        for num in nums:
+            running_sum += num
+            if running_sum - k in sum_count:
+                count += sum_count[running_sum - k]
+            sum_count[running_sum] = sum_count.get(running_sum, 0) + 1
+
+        return count
