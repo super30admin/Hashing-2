@@ -1,0 +1,22 @@
+### Running Sum hashmap and Subarray count equal k ####
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        if nums == None or len(nums) == 0:
+            return 0
+        rSum = 0
+        hashMap =  dict()
+        count = 0
+        hashMap[0] = 1
+        for i in range(len(nums)):
+            rSum = rSum + nums[i]
+            if hashMap.get(rSum - k) != None:
+                count = count + hashMap.get(rSum - k)  
+            if hashMap.get(rSum) != None:  
+                hashMap[rSum] += 1       
+            else:
+                hashMap[rSum] = 1
+        return count
+
+
+        
+        
