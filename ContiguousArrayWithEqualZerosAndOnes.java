@@ -15,7 +15,7 @@ public class ContiguousArrayWithEqualZerosAndOnes {
             int sum = 0;
             int maxLen = Integer.MIN_VALUE;
 
-            sumToIndexMap.put(0, -1); //Dummy Value to include subarray starting from 0
+            sumToIndexMap.put(0, -1); //Dummy Value to include subarray starting from 0 -> [1,0]
             for (int i = 0; i < nums.length; i++) {
                 sum += nums[i] == 1 ? 1 : -1;
                 if (sumToIndexMap.containsKey(sum)) {
