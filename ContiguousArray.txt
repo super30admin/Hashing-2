@@ -1,0 +1,22 @@
+class Solution {
+    public int findMaxLength(int[] nums) {
+        int maxLength = 0;
+        int rSum = 0;
+        Map<Integer,Integer> map = new HashMap<>();
+        // calculate the running sum and store the first occurance of the running sum 
+        map.put(0,-1);
+        for(int i=0 ; i< nums.length ; i++){
+        // using Hash Map to store the RunningSum (STATE value with its 1st occurence)
+            // if(current Rsum is already in the HashMap - we just calculate for the Max value )
+                // else add the current Rsum to the hashMap<Integer , Integer> (Rsum,Index)
+            rSum = rSum + ((nums[i] == 0) ? -1 : 1);
+            if(map.containsKey(rSum)){ // calculate the maxLenght 
+                maxLength = Math.max( maxLength, i - map.get(rSum));
+            }else {                    // add the first occurence of the (rSum)state
+                map.put(rSum, i);
+            }
+        }
+        // finally return the maxLength
+        return maxLength;
+    }
+}

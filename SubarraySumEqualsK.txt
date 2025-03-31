@@ -1,0 +1,21 @@
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int total=0;
+        int rSum = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0,1); // Mistake map.put(0,-1); 
+        //for loop to iterate to calculat ethe rSum at each index 
+        for(int i =0; i< nums.length ; i++){
+        //Map to (rSumComplement, count) if the complement [ y = k - x ]
+        // if the rSum's - k = exists in Map  it means that (y's + x's) == K & we can reach[Sum = k](state)
+        // else add it to rSumComplements map so that in future we can compare the difference
+            rSum = rSum + nums[i];
+            int x = rSum - k ;
+            if(map.containsKey(x)){
+                total = total + map.get(x);
+            }
+            map.put(rSum, map.getOrDefault(rSum,0)+1); /// I made a bigmistake here - i added else { map.put(x, 1);} 
+        }
+        return total;
+    }
+}
