@@ -1,0 +1,27 @@
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        //base case: if nums is null or length is 0, return 0
+        if(nums == null || nums.length == 0 ){
+            return 0;
+        }
+        //Using running sum, if we substract a number from the whole sum, and its already there in array, means when we add all elemnts from that element to present index, we get the sum as key
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        hm.put(0, 1);
+        int rSum = 0, count = 0;
+        for(int i=0;i<nums.length;i++){
+            rSum = rSum + nums[i];
+            int dif = rSum - k;
+            //always checking if we have rsum-key already before or not 
+            if(hm.containsKey(dif)){
+                //if yes, increase count
+                count = count + hm.get(dif);
+            }
+            //adding rsum in hashmap to keep track of rsum
+            hm.put(rSum, hm.getOrDefault(rSum, 0)+1);
+
+        }
+        
+        return count;
+    }
+    
+}

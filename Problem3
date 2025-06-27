@@ -1,0 +1,33 @@
+class Solution {
+    public int longestPalindrome(String s) {
+        if(s == null){
+            return 0;
+        }
+        //for a palindrome, atmost 1 character should be 1 or odd
+        int count = 0, flag = 0;
+        HashMap<Character, Integer> hm = new HashMap<>();
+        //storing all char with its count
+        for(int i=0;i<s.length();i++){
+            hm.put(s.charAt(i), hm.getOrDefault(s.charAt(i), 0) + 1);
+        }
+        for (Integer value : hm.values()) {
+            //if the char count is even, we can add it to palindrome
+            if(value%2 == 0){
+                count = count + value;
+            }
+            //if odd, only one char can be added
+            else{
+                //if it is odd count, we can add odd-1 of that characters in palindrom
+                if(value != 1){
+                    count = count + value  - 1;
+                }
+                //if it is 1, we can only add 1 out of all chars that are 1 count
+                if(flag == 0){
+                    count = count+1;
+                    flag = 1;
+                }
+            }
+        }
+        return count;
+    }
+}
