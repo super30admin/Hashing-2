@@ -6,6 +6,10 @@ public class _560_Subarray_Sum_Equals_K {
     }
 
     public int subarraySum(int[] nums, int k) {
+
+        if(nums == null || nums.length == 0){
+            return 0;
+        }
         int ans = 0;
         int sum = 0;
 
