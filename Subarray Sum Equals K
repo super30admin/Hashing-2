@@ -1,0 +1,23 @@
+# The count of subarrays that sum to K is kept by iterating through the list and keeping a running sum
+# For each element, the code checks if there is a previous running sum (rSum - k) in the map
+# The count is incremented by the frequency of the previous sum
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        if nums == None or len(nums) == 0:
+            return 0
+        count = 0
+        map = {}
+        map[0] = 1
+        rSum = 0
+
+        for i in range(len(nums)):
+            rSum = rSum + nums[i]
+            if rSum - k in map:
+                count = count + map[rSum - k]
+            if rSum in map:
+                map[rSum] = map[rSum]+1
+            else:
+                map[rSum] = 1
+        
+        return count

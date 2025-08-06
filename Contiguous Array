@@ -1,0 +1,25 @@
+# I used a hashmap to store the first index where a running sum is encountered
+# An occurance of 1 adds 1 and an occurance of 0 subtracts 1 from the running sum
+# Continuously update the maximum length to see the farthest indices that add up to 0
+
+class Solution:
+    def findMaxLength(self, nums: List[int]) -> int:
+        if nums == 1 or len(nums) == 0:
+            return 0
+        
+        rSum = 0
+        Map = {}
+        Map[0] = -1 #rSum: idx
+        maxLen = 0
+
+        for i in range(len(nums)):
+            if nums[i] == 0:
+                rSum -= 1
+            else:
+                rSum += 1
+            if rSum in Map:
+                maxLen = max(maxLen, i - Map[rSum])
+            else:
+                Map[rSum] = i
+        
+        return maxLen

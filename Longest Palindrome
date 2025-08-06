@@ -1,0 +1,23 @@
+# First, I decided to iterate through the string and used a set to keep track of characters that appear an odd number of times
+# If a character occurs a second time, it forms a pair which adds 2 to the total length and removes the character from the set
+# If there are any characters left in the set at the end, the total length goes up by 1 as a letter can be added to the center of the palindrome
+
+
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        if s == None or len(s) == 0:
+            return 0
+        count = 0
+        myset = set()
+        for i in range(len(s)):
+            c = s[i]
+            if c in myset:
+                count = count + 2
+                myset.remove(c)
+            else:
+                myset.add(c)
+        
+        if myset:
+            count = count + 1
+        
+        return count
