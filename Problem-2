@@ -1,0 +1,34 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : None
+
+// Your code here along with comments explaining your approach
+// Calculate the running sum in the array by adding 1 when a 1 occurs and subtracting 1 when 0 occurs
+// For every unique running sum, add to a hash map with the index at which it occured
+// if a sum exists in map take difference of the indices to get length. Return the maximum length
+
+class Solution {
+    public int findMaxLength(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        int rSum = 0;
+        int maxLength = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] == 1) {
+                rSum++;
+            }
+            else {
+                rSum--;
+            }
+            if(map.containsKey(rSum)) {
+                int length = i - map.get(rSum);
+                maxLength = Math.max(maxLength, length);
+            }
+            else {
+                map.put(rSum, i);
+            }
+        }
+        return maxLength;
+    }
+}

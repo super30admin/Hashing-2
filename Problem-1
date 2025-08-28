@@ -1,0 +1,26 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : None
+
+// Your code here along with comments explaining your approach
+// Calculate running sum while iterating through the array and store it in a hash map
+// if the running sum - k exists in the map then a subarray with sum k exists
+// add the frequency from the map to the final count
+
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+
+        int count = 0;
+        int rSum = 0;
+        for(int num : nums) {
+            rSum += num;
+            if(map.containsKey(rSum - k))
+                count += map.get(rSum - k);
+            map.put(rSum, map.getOrDefault(rSum, 0) + 1);
+        }
+        return count;
+    }
+}
