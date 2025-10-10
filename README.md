@@ -9,6 +9,17 @@ Explain your approach in **three sentences only** at top of your code
 ## Problem2 (https://leetcode.com/problems/contiguous-array/)
 
 
+Running sum :
+
+Intially assigned an dictionary with O sum at index -1 ( to handle one edge case if the longest array is from index 0 )
+
+iterate each element and do running sum ( decrement 1 if 0 and increment 1 if  1)
+check if the running sum exists in the dictionary idf not add the index 
+if you find the matching running sum 
+     do max(max_count, index_at_same_running_sum- firstoccurence indec )
+
+
+
 ## Problem3 (https://leetcode.com/problems/longest-palindrome)
 I used set data structure 
 
