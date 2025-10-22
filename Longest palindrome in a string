@@ -1,0 +1,23 @@
+// We use a HashSet to track characters that haven't formed a pair yet.
+// When we find a pair, we add 2 to the count and remove that char from the set.
+// If anything is left in the set, we can put one in the center — so we add 1 to the total.
+//time o(n)
+//space o(1)
+class Solution {
+    public int longestPalindrome(String s) {
+        HashSet<Character> set = new HashSet<>();
+        int count = 0;
+
+        for (char c : s.toCharArray()) {
+            if (set.contains(c)) {
+                count += 2;
+                set.remove(c);
+            } else {
+                set.add(c);
+            }
+        }
+
+        if (set.size() > 0) return count + 1;
+        return count;
+    }
+}
