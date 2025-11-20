@@ -3,12 +3,8 @@
 # Use 'set' to store the characters. Used the variable to keep the count of the characters. Iterate over the string if the character is repeating then increase the counter by 2 and remove it from the set. At the end check if there anything in the set. If set has anything then increase the counter by 1. 
 # Time Complexity- O(n) Space Complexity- O(1)
 
-# why not to use range here because we don't have to do anything with indices we care about the characters not position
-# for char in range(len(s)):
-# whereas we need an range function in the isomorphic_strings program because we are comparing the two strings 
-
 class Solution:
-    def longestPlaindrome(self, s:str)-> int:
+    def longestPalindrome(self, s:str)-> int:
         # initialise the empty set
         set_chars = set()
         # initilsie the counter 
@@ -33,14 +29,3 @@ class Solution:
 solution = Solution()
 print(solution.longestPlaindrome("abccccdd"))
 print(solution.longestPlaindrome("abaa"))
-
-
-
-
-
-
-# Input: s = "abccccdd"
-# Output: 7
-
-# Input: s = "a"
-# Output: 1
