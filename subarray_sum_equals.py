@@ -27,7 +27,7 @@
 
 
 #  Hashmap Time- O(n) Space- O(n)
-
+#  here we are checking the difference between the running sum minus target in the map if that's present then we got the one to reach to our target. so increase the counter it it's not present then keep the counter as it is. if that running sum is present in the map then increase the frequency by one else if we are adding for the first time then add one
 class Solution:
     def subarraySum(self, nums: list[int], k: int) -> int:
         counter = 0
