@@ -27,5 +27,5 @@ class Solution:
         return count
 
 solution = Solution()
-print(solution.longestPlaindrome("abccccdd"))
-print(solution.longestPlaindrome("abaa"))
+print(solution.longestPalindrome("abccccdd"))
+print(solution.longestPalindrome("abaa"))

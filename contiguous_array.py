@@ -39,6 +39,7 @@ class Solution:
 solution = Solution()
 print(solution.findMaxLength([0,1]))
 print(solution.findMaxLength([0,1,0,1,1,1,0,1]))
+print(solution.findMaxLength([0,0,0,0,1,1,1]))
 
         
 
