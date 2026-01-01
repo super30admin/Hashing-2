@@ -1,21 +1,20 @@
-#time complexity- 0(n) and space complexity- 0(n)
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        if nums == None or len(nums)==0:
-            return 0
 
-        rsum=0
-        Map={}
-        Map[0]=-1
-        Max=0
+        running_sum=0
+        map={}
+        max_length=0
+
+        map[0]=-1
 
         for i in range(len(nums)):
             if nums[i]==0:
-                rsum=rsum-1
-            if nums[i]==1:
-                rsum = rsum+1
-            if rsum not in Map:
-                Map[rsum]=i
+                running_sum=running_sum-1
             else:
-                Max=max(Max,i-Map[rsum])
-        return Max 
+                running_sum+=1
+            if running_sum not in map:
+                map[running_sum]=i
+            else:
+                max_length=max(max_length, i-map[running_sum])
+        return max_length
+        
