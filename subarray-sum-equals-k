@@ -1,0 +1,33 @@
+Time Complexity
+
+O(n) — We traverse the array once and each hashmap operation is O(1).
+
+Space Complexity
+
+O(n) — In the worst case, the hashmap stores prefix sums for all indices.
+
+Did this code successfully run on LeetCode?
+
+Yes, it passed all test cases.
+
+Any problem you faced while coding this?
+
+No issues were encountered.
+
+We use the Prefix Sum + HashMap technique. 
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        map = {0:1}
+        rSum = 0
+        result = 0
+
+
+        for num in nums:
+            rSum += num
+            cmp = rSum - k
+            if cmp in map:
+                result += map[cmp]
+            map[rSum] = map.get(rSum, 0) + 1
+
+        return result 

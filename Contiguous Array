@@ -1,0 +1,31 @@
+
+We use the Prefix Sum + HashMap technique.
+
+Time Complexity
+
+O(n) — We traverse the array once and perform constant-time hashmap operations.
+
+Space Complexity
+
+O(n) — The hashmap may store up to n prefix sums in the worst case.
+
+class Solution:
+    def findMaxLength(self, nums: List[int]) -> int:
+        mp = {0: -1}
+        rsum = 0
+        max_len = 0
+
+        for i in range(len(nums)):
+            num = nums[i]
+
+            if num == 0:
+                rsum -= 1
+            else:
+                rsum += 1
+
+            if rsum in mp:
+                max_len = max(max_len, i - mp[rsum])
+            else:
+                mp[rsum] = i
+
+        return max_len

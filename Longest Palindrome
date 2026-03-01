@@ -1,0 +1,27 @@
+Approach
+
+We use a HashSet to track characters with odd frequencies.
+
+Time Complexity
+
+O(n) — We traverse the string once.
+
+Space Complexity
+
+O(1) — At most 52 characters (A–Z, a–z) can be stored in the set, which is constant space.
+
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        ss = set()
+        count = 0
+
+        for c in s:
+            if c in ss:
+                ss.remove(c)
+                count += 2
+            else:
+                ss.add(c)
+        if ss:
+            return count + 1
+        
+        return count
