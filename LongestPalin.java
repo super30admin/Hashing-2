@@ -1,23 +1,21 @@
 import java.util.*;
 
 public class LongestPalin {
-    public int longestPalin(String s) {
-        HashSet<Character> hS = new HashSet<>();
-        int length = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-            char sc = s.charAt(i);
-
-            if (!hS.contains(sc)) {
-                hS.add(sc);
+    public int longestPalindrome(String s) {
+        HashSet<Character> hs = new HashSet<>();
+        int count = 0;
+        for (int i=0; i<s.length(); i++){
+            char c = s.charAt(i);
+            if (!hs.contains(c)) {
+                hs.add(c);
             } else {
-                hS.remove(sc);
-                length += 2;
+                count += 2;
+                hs.remove(c);
             }
         }
-        if (!hS.isEmpty()) {
-            length++;
+        if (hs.size() > 0) {
+            count +=1;
         }
-        return length;
+        return count;
     }
 }

@@ -2,24 +2,22 @@ import java.util.*;
 
 public class ContiguousArray {
     public int contiguousArray(int[] nums) {
-        HashMap<Integer, Integer> h = new HashMap<>();
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        int rSum = 0;
+        int max = 0;
 
-        int maxL = 0;
-        int sum = 0;
+        for (int i=0; i<nums.length; i++){
+            int currNum = nums[i];
+            if (currNum == 0) rSum--;
+            else rSum++;
 
-        for (int i = 0; i < nums.length; i++) {
-
-            if (nums[i] == 0) {
-                sum -= 1;
-            } else {
-                sum++;
-            }
-            if (!h.containsKey(sum)) {
-                h.put(sum, i);
-            } else {
-                maxL = Math.max(maxL, i - h.get(sum));
+            hm.put(0,-1);
+            if (!hm.containsKey(rSum)) {
+                hm.put(rSum,i);
+            } else{
+                max = Math.max(i - hm.get(rSum), max);
             }
         }
-        return maxL;
+        return max;
     }
 }
