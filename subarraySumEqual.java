@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class SubarraySumEqual {
+    
     public boolean subarraySumEqual(int[] arr, int target) {
         HashMap<Integer,Integer> map = new HashMap<>();
         int count = 0;

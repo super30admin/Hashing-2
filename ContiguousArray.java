@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class ContiguousArray {
+    
     public int contiguousArray(int[] nums) {
         HashMap<Integer, Integer> hm = new HashMap<>();
         int rSum = 0;

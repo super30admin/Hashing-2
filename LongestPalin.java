@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class LongestPalin {
+    
     public int longestPalindrome(String s) {
         HashSet<Character> hs = new HashSet<>();
         int count = 0;
