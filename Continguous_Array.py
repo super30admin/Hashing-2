@@ -6,7 +6,7 @@
 
 # Your code here along with comments explaining your approach in three sentences only
 #I have used HashMap to keep the runningSum at each index and store it. 
-#If the runningSum already exists then we calculate the longest by subtracting the current index from the previous index
+#If the runningSum already exists then we calculate the longest by subtracting the current index from the previous index in HashMap
 
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
